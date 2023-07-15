@@ -1,0 +1,8 @@
+NextJS
+Emotion
+Typescript
+Zustand
+ThreeJS
+ChakraUI
+ChakraUI Icons
+React Icons
