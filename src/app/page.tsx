@@ -9,8 +9,8 @@ export default function Home() {
 
   return (
     <Flex
-      width={"100vw"}
-      height={"100vh"}
+      w={"100vw"}
+      h={"100vh"}
       bg={bgColor}
       color={textColor}
       overflow={"hidden"}
@@ -18,7 +18,7 @@ export default function Home() {
       justifyContent={"center"}
       overflowY={"scroll"}
     >
-      <Container height={"100vh"}>
+      <Container h={"100vh"}>
         <NavBar />
         <LandingPage />
       </Container>

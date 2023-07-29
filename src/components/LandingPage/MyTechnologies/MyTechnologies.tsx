@@ -26,16 +26,17 @@ const TechnologyComponent: React.FC<TechnologyComponentProps> = ({
 }) => {
   return (
     <Flex
-      width={"auto"}
-      height={"auto"}
+      sx={{ userSelect: "none" }}
+      w={"auto"}
+      h={"auto"}
       align="center"
       m={2}
-      p={0.5}
+      p={2}
       border={"1px solid"}
       borderColor={useColorModeValue("black", "white")}
       borderRadius={"5px"}
       cursor={"pointer"}
-      _hover={{ bg: "#b80000" }}
+      _hover={{ bg: "#b80000", color: "white" }}
       transition={"0.2s"}
       onClick={() => {
         window.open(technology.link, "_blank");
