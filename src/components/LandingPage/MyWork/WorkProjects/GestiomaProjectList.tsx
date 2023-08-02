@@ -7,6 +7,8 @@ import {
   Heading,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { TechnologyComponent } from "../../MyTechnologies/MyTechnologies";
+import { technologiesList } from "../../MyTechnologies/technologyList";
 
 const GestiomaProjectList = () => {
   return (
@@ -60,14 +62,20 @@ const ProjectWeb = () => {
       <Text>Imagen</Text>
       <Text>Tecnologías</Text>
 
-      <List>
-        <ListItem>HTML</ListItem>
-        <ListItem>CSS</ListItem>
-        <ListItem>JavaScript</ListItem>
-        <ListItem>React</ListItem>
-        <ListItem>MaterialUI</ListItem>
-        <ListItem>Styled-Components</ListItem>
-      </List>
+      <Flex mx={4} w={"100%"} maxW={"100%"} flexWrap={"wrap"}>
+        {["HTML", "CSS", "JavaScript", "React", "Chakra UI", "Git"].map(
+          (tech) => {
+            const technology = technologiesList.find((t) => t.name === tech);
+            return technology ? (
+              <Box>
+                <TechnologyComponent key={tech} technology={technology}>
+                  {tech}
+                </TechnologyComponent>
+              </Box>
+            ) : null;
+          }
+        )}
+      </Flex>
     </Flex>
   );
 };
@@ -92,14 +100,31 @@ const ProjectVisor = () => {
       <Text>Imagen</Text>
       <Text>Tecnologías</Text>
 
-      <List>
-        <ListItem>HTML</ListItem>
-        <ListItem>CSS</ListItem>
-        <ListItem>JavaScript</ListItem>
-        <ListItem>React</ListItem>
-        <ListItem></ListItem>
-        <ListItem></ListItem>
-      </List>
+      <Flex mx={4} w={"100%"} maxW={"100%"} flexWrap={"wrap"}>
+        {[
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "React",
+          "Redux",
+          "Material UI",
+          "Styled Components",
+          "Node",
+          "MySQL",
+          "Three.js",
+          "Python",
+          "Git",
+        ].map((tech) => {
+          const technology = technologiesList.find((t) => t.name === tech);
+          return technology ? (
+            <Box>
+              <TechnologyComponent key={tech} technology={technology}>
+                {tech}
+              </TechnologyComponent>
+            </Box>
+          ) : null;
+        })}
+      </Flex>
     </Flex>
   );
 };
@@ -124,14 +149,30 @@ const ProjectManager = () => {
       <Text>Imagen</Text>
       <Text>Tecnologías</Text>
 
-      <List>
-        <ListItem>HTML</ListItem>
-        <ListItem>CSS</ListItem>
-        <ListItem>JavaScript</ListItem>
-        <ListItem>React</ListItem>
-        <ListItem></ListItem>
-        <ListItem></ListItem>
-      </List>
+      <Flex mx={4} w={"100%"} maxW={"100%"} flexWrap={"wrap"}>
+        {[
+          "HTML",
+          "CSS",
+          "TypeScript",
+          "Next.js",
+          "Zustand",
+          "Chakra UI",
+          "Emotion",
+          "Node",
+          "MySQL",
+          "Python",
+          "Git",
+        ].map((tech) => {
+          const technology = technologiesList.find((t) => t.name === tech);
+          return technology ? (
+            <Box>
+              <TechnologyComponent key={tech} technology={technology}>
+                {tech}
+              </TechnologyComponent>
+            </Box>
+          ) : null;
+        })}
+      </Flex>
     </Flex>
   );
 };

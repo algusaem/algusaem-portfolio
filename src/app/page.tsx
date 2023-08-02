@@ -1,7 +1,7 @@
 "use client";
 import LandingPage from "@/components/LandingPage/LandingPage";
 import { NavBar } from "@/components/NavBar/NavBar";
-import { Box, Container, Flex, useColorModeValue } from "@chakra-ui/react";
+import { Container, Flex, useColorModeValue } from "@chakra-ui/react";
 
 export default function Home() {
   const bgColor = useColorModeValue("white", "gray.800");

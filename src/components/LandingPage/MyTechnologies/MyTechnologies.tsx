@@ -20,7 +20,7 @@ const MyTechnologies = () => {
 };
 export default MyTechnologies;
 
-const TechnologyComponent: React.FC<TechnologyComponentProps> = ({
+export const TechnologyComponent: React.FC<TechnologyComponentProps> = ({
   children,
   technology,
 }) => {
