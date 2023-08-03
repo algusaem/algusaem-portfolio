@@ -1,10 +1,11 @@
 import React from "react";
-import { Text, Box, useColorModeValue, Flex, Avatar } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import MyStudiesList from "./MyStudiesList/MyStudiesList";
 import AboutMe from "./AboutMe/AboutMe";
 import LandingPageHeading from "./LandingPageHeading/LandingPageHeading";
 import MyTechnologies from "./MyTechnologies/MyTechnologies";
 import MyWork from "./MyWork/MyWork";
+import AvatarBox from "./AvatarBox/AvatarBox";
 
 const LandingPage = () => {
   return (
@@ -16,26 +17,7 @@ const LandingPage = () => {
       pb={8}
     >
       <Box w={"100%"} h={"100%"}>
-        <Flex
-          align="center"
-          justifyContent="space-between"
-          borderRadius={"5px"}
-          p={4}
-          m={4}
-          mt={8}
-          bg={useColorModeValue("gray.100", "gray.700")}
-          px={"10%"}
-        >
-          <Flex direction="column">
-            <Text fontSize="3xl" fontWeight="bold" lineHeight={1.5}>
-              Alex Gutierrez
-            </Text>
-            <Text fontSize="large" lineHeight={1.5}>
-              Desarrollador Web Frontend
-            </Text>
-          </Flex>
-          <Avatar size="xl" name="Alex Gutierrez" src="/fotoPerfil.png" />
-        </Flex>
+        <AvatarBox />
 
         <LandingPageHeading>Sobre Mí</LandingPageHeading>
         <AboutMe />
