@@ -9,7 +9,7 @@ interface TechnologyComponentProps {
 
 const MyTechnologies = () => {
   return (
-    <Flex mx={"4"} flexWrap="wrap">
+    <Flex mx={"4"} flexWrap="wrap" py={2}>
       {technologiesList.map((technology, index) => (
         <TechnologyComponent key={index} technology={technology}>
           {technology.name}

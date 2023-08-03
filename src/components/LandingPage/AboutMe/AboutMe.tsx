@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, useColorModeValue } from "@chakra-ui/react";
+import { Button, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 
 const AboutMe = () => {
   return (
@@ -27,6 +27,12 @@ const AboutMe = () => {
         abierto a trabajar en cualquier lugar del planeta. ¡Domino el{" "}
         <ColoredText>Inglés</ColoredText> y estaría encantado de practicarlo!
       </Paragraph>
+
+      <Flex width={"100%"} align={"center"} justify={"center"} py={2}>
+        <Button bg={"#805AD5"} _hover={{ bg: "#6245a1" }} color={"white"}>
+          Mi Curriculum
+        </Button>
+      </Flex>
     </>
   );
 };

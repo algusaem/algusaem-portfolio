@@ -42,9 +42,7 @@ const MyStudiesListItem: React.FC<{ children: React.ReactNode[] }> = ({
       lineHeight={1.5}
     >
       <Flex justifyContent={"space-between"}>
-        <Text fontSize={"xl"} fontWeight={"bold"}>
-          {children[0]}
-        </Text>
+        <Text fontSize={"xl"}>{children[0]}</Text>
         {children[1]}
       </Flex>
     </ListItem>

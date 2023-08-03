@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Box, useColorModeValue, Flex, Heading } from "@chakra-ui/react";
+import { Text, Box, useColorModeValue, Flex, Avatar } from "@chakra-ui/react";
 import MyStudiesList from "./MyStudiesList/MyStudiesList";
 import AboutMe from "./AboutMe/AboutMe";
 import LandingPageHeading from "./LandingPageHeading/LandingPageHeading";
@@ -16,19 +16,26 @@ const LandingPage = () => {
       pb={8}
     >
       <Box w={"100%"} h={"100%"}>
-        <Heading
-          color={useColorModeValue("black", "white")}
-          size={"lg"}
-          mt={4}
-          py={8}
-          fontWeight={"bold"}
-          as={"h1"}
-          textAlign={"center"}
+        <Flex
+          align="center"
+          justifyContent="space-between"
           borderRadius={"5px"}
+          p={4}
+          m={4}
+          mt={8}
           bg={useColorModeValue("gray.100", "gray.700")}
+          px={"10%"}
         >
-          ¡Hola! Soy Alex Gutierrez Desarrollador Web Frontend
-        </Heading>
+          <Flex direction="column">
+            <Text fontSize="3xl" fontWeight="bold" lineHeight={1.5}>
+              Alex Gutierrez
+            </Text>
+            <Text fontSize="large" lineHeight={1.5}>
+              Desarrollador Web Frontend
+            </Text>
+          </Flex>
+          <Avatar size="xl" name="Alex Gutierrez" src="/fotoPerfil.png" />
+        </Flex>
 
         <LandingPageHeading>Sobre Mí</LandingPageHeading>
         <AboutMe />

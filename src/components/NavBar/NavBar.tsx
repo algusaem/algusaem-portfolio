@@ -13,7 +13,6 @@ export const NavBar = () => {
     setLang(checkLanguage() || "es");
   }, []);
 
-  // Changes the localStorage associated to the language.
   const toggleLanguage = () => {
     const newLang = lang === "es" ? "en" : "es";
     localStorage.setItem("lang", newLang);

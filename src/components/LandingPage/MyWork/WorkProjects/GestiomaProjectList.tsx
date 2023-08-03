@@ -64,11 +64,11 @@ const ProjectWeb = () => {
 
       <Flex mx={4} w={"100%"} maxW={"100%"} flexWrap={"wrap"}>
         {["HTML", "CSS", "JavaScript", "React", "Chakra UI", "Git"].map(
-          (tech) => {
+          (tech: string, key) => {
             const technology = technologiesList.find((t) => t.name === tech);
             return technology ? (
-              <Box>
-                <TechnologyComponent key={tech} technology={technology}>
+              <Box key={key}>
+                <TechnologyComponent key={key} technology={technology}>
                   {tech}
                 </TechnologyComponent>
               </Box>
@@ -114,11 +114,11 @@ const ProjectVisor = () => {
           "Three.js",
           "Python",
           "Git",
-        ].map((tech) => {
+        ].map((tech: string, key) => {
           const technology = technologiesList.find((t) => t.name === tech);
           return technology ? (
-            <Box>
-              <TechnologyComponent key={tech} technology={technology}>
+            <Box key={key}>
+              <TechnologyComponent key={key} technology={technology}>
                 {tech}
               </TechnologyComponent>
             </Box>
@@ -162,11 +162,11 @@ const ProjectManager = () => {
           "MySQL",
           "Python",
           "Git",
-        ].map((tech) => {
+        ].map((tech: string, key) => {
           const technology = technologiesList.find((t) => t.name === tech);
           return technology ? (
-            <Box>
-              <TechnologyComponent key={tech} technology={technology}>
+            <Box key={key}>
+              <TechnologyComponent key={key} technology={technology}>
                 {tech}
               </TechnologyComponent>
             </Box>

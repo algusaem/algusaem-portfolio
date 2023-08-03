@@ -14,12 +14,11 @@ const navbarLinksHover = () => {
   };
 };
 
-const NavBarLink: React.FC<NavBarLinkProps> = ({ name, key }) => {
+const NavBarLink: React.FC<NavBarLinkProps> = ({ name }) => {
   const hrefTo = name.toLowerCase();
 
   return (
     <Box
-      key={key}
       border="solid 1px transparent"
       borderRadius="4px"
       transition={"0.2s"}
