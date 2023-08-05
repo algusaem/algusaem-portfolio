@@ -1,11 +1,7 @@
 import React from "react";
 import { useColorModeValue, Text, Icon, Flex } from "@chakra-ui/react";
-import { Technology, technologiesList } from "./technologyList";
-
-interface TechnologyComponentProps {
-  children: React.ReactNode;
-  technology: Technology;
-}
+import { technologiesList } from "./technologyList";
+import { TechnologyComponentProps } from "@/interfaces/Technologies/Technologies";
 
 const MyTechnologies = () => {
   return (
