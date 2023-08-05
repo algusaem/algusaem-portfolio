@@ -29,7 +29,7 @@ const AboutMe = () => {
       </Paragraph>
 
       <Flex width={"100%"} align={"center"} justify={"center"} py={2}>
-        <Button bg={"#805AD5"} _hover={{ bg: "#6245a1" }} color={"white"}>
+        <Button bg={"#805AD5"} _hover={{ bg: "#6133C9" }} color={"white"}>
           Mi Curriculum
         </Button>
       </Flex>

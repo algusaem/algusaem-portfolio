@@ -7,7 +7,7 @@ const LandingPageHeading: React.FC<React.PropsWithChildren<{}>> = ({
   return (
     <Box px={4} pt={4} mb={2}>
       <Heading
-        borderBottom={"4px solid #b80000"}
+        borderBottom={"4px solid #5AD580"}
         w={"fit-content"}
         size={"md"}
         as={"h2"}

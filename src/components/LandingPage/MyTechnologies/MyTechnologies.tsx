@@ -32,7 +32,7 @@ export const TechnologyComponent: React.FC<TechnologyComponentProps> = ({
       borderColor={useColorModeValue("black", "white")}
       borderRadius={"5px"}
       cursor={"pointer"}
-      _hover={{ bg: "#b80000", color: "white" }}
+      _hover={{ bg: "#805AD5", color: "white" }}
       transition={"0.2s"}
       onClick={() => {
         window.open(technology.link, "_blank");

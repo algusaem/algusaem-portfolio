@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html style={{ scrollBehavior: "smooth" }}>
       <body>
         <Providers>{children}</Providers>
       </body>
