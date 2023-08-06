@@ -1,88 +1,52 @@
-import React, { useContext, useState, useEffect } from "react";
+// NavBar.tsx
+import React, { useContext } from "react";
 import {
   useColorMode,
   useColorModeValue,
   useDisclosure,
   Icon,
+  useMediaQuery,
 } from "@chakra-ui/react";
-import {
-  Box,
-  Flex,
-  Button,
-  Stack,
-  Text,
-  Drawer,
-  DrawerBody,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-} from "@chakra-ui/react";
+import { Box, Flex, Button, Stack, Text } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import NavBarLinks from "./NavBarLinks/NavBarLinks";
 import { LangContext } from "@/app/providers";
 import { GiHamburgerMenu } from "react-icons/gi";
+import NavBarDrawer from "./NavBarDrawer/NavBarDrawer";
 
 export const NavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const boxBg = useColorModeValue("white", "gray.800");
-  const context = useContext(LangContext);
+
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isLargerThan580] = useMediaQuery("(min-width: 580px)");
+  const displayName = isLargerThan580 ? "Alex Gutierrez" : "AG";
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 580);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 580);
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const displayName = isMobile ? "AG" : "Alex Gutierrez";
-
+  const context = useContext(LangContext);
   if (!context) {
     return null;
   }
-
   const { lang, setLang } = context;
-
   const toggleLanguage = () => {
-    const newLang = lang === "es" ? "en" : "es";
-    localStorage.setItem("lang", newLang);
-    setLang(newLang);
+    setLang(lang === "es" ? "en" : "es");
+    localStorage.setItem("lang", lang === "es" ? "en" : "es");
   };
 
   return (
     <Box bg={boxBg} px={4} position="sticky" top={0} zIndex={1}>
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-        {isMobile ? (
+        {isLargerThan580 ? (
+          <>
+            <Text fontWeight={"bold"}>{displayName}</Text>
+            <NavBarLinks />
+          </>
+        ) : (
           <>
             <Button onClick={onOpen} aria-label="Navigation Menu">
               <Icon as={GiHamburgerMenu} />
             </Button>
             <Text fontWeight={"bold"}>{displayName}</Text>
-            <Drawer isOpen={isOpen} onClose={onClose}>
-              <DrawerOverlay>
-                <DrawerContent>
-                  <DrawerCloseButton
-                    _hover={{ bg: "#5ad580", color: "white" }}
-                  />
-                  <DrawerHeader>Alex Gutierrez</DrawerHeader>
-                  <DrawerBody>
-                    <NavBarLinks direction="column" />
-                  </DrawerBody>
-                </DrawerContent>
-              </DrawerOverlay>
-            </Drawer>
-          </>
-        ) : (
-          <>
-            <Text fontWeight={"bold"}>{displayName}</Text>
-            <NavBarLinks />
+            <NavBarDrawer isOpen={isOpen} onClose={onClose} />
           </>
         )}
 

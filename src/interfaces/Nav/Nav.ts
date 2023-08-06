@@ -5,3 +5,7 @@ export interface NavBarLinkProps {
 export interface NavBarLinksProps {
   direction?: "row" | "column";
 }
+export interface DisclosureProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
