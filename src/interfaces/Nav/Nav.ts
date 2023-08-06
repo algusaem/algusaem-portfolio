@@ -1,4 +1,7 @@
 export interface NavBarLinkProps {
-  name: string;
-  key: string | number;
+  displayName: string;
+  routeName: string;
+}
+export interface NavBarLinksProps {
+  direction?: "row" | "column";
 }

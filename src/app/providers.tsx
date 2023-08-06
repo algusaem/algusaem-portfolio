@@ -2,11 +2,7 @@
 
 import React, { useState, useEffect, createContext, ReactNode } from "react";
 import { CacheProvider } from "@chakra-ui/next-js";
-import {
-  ChakraProvider,
-  extendTheme,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { checkLanguage } from "@/utils/checkLanguage";
 import { Flex, Spinner } from "@chakra-ui/react";
 

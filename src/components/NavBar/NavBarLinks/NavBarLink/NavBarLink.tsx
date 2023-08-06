@@ -2,34 +2,29 @@ import React from "react";
 import { Box, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { NavBarLinkProps } from "@/interfaces/Nav/Nav";
+import styled from "@emotion/styled";
 
-const navbarLinksHover = () => {
-  return {
-    _hover: {
-      backgroundColor: "#b80000",
-      cursor: "pointer",
-      borderColor: "#b80000",
-      color: "white",
-    },
-  };
-};
+const LinkBox = styled(Link)`
+  display: block;
+  border: solid 1px transparent;
+  transition: 0.2s;
+  user-select: none;
+  border-radius: 4px;
+  &:hover {
+    background-color: #5ad580;
+    cursor: pointer;
+    border-color: #5ad580;
+    color: white;
+  }
+`;
 
-const NavBarLink: React.FC<NavBarLinkProps> = ({ name }) => {
-  const hrefTo = name.toLowerCase();
-
+const NavBarLink: React.FC<NavBarLinkProps> = ({ displayName, routeName }) => {
   return (
-    <Box
-      border="solid 1px transparent"
-      borderRadius="4px"
-      transition={"0.2s"}
-      {...navbarLinksHover()}
-    >
-      <Link href={hrefTo}>
-        <Text m={2} fontSize={"medium"}>
-          {name}
-        </Text>
-      </Link>
-    </Box>
+    <LinkBox href={`/${routeName}`} passHref>
+      <Text m={2} fontSize={"medium"}>
+        {displayName}
+      </Text>
+    </LinkBox>
   );
 };
 

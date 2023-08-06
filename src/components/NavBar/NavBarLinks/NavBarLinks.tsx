@@ -1,16 +1,18 @@
 import { Flex, Box } from "@chakra-ui/react";
 import React from "react";
 import NavBarLink from "./NavBarLink/NavBarLink";
+import { linkMap } from "./LinkMaps/linkMap";
+import { NavBarLinksProps } from "@/interfaces/Nav/Nav";
 
-const linkNames = ["Inicio", "Proyectos", "Contacto"];
-const linkNamesEng = ["About", "Projects", "Contact"];
+const linkNamesES: string[] = ["Inicio", "Proyectos", "Contacto"];
+const linkNamesEN: string[] = ["About", "Projects", "Contact"];
 
-const NavBarLinks = () => {
+const NavBarLinks: React.FC<NavBarLinksProps> = ({ direction = "row" }) => {
   return (
     <Box>
-      <Flex>
-        {linkNames.map((name, index) => (
-          <NavBarLink name={name} key={index} />
+      <Flex direction={direction} wrap="nowrap">
+        {linkNamesES.map((name) => (
+          <NavBarLink displayName={name} routeName={linkMap[name]} key={name} />
         ))}
       </Flex>
     </Box>

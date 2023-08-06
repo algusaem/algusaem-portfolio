@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+import Link from "next/link";
 
 const AboutMe = () => {
   return (
@@ -29,9 +30,11 @@ const AboutMe = () => {
       </Paragraph>
 
       <Flex width={"100%"} align={"center"} justify={"center"} py={2}>
-        <Button bg={"#805AD5"} _hover={{ bg: "#6133C9" }} color={"white"}>
-          Mi Curriculum
-        </Button>
+        <Link href="/CV_ESP.pdf" passHref>
+          <Button bg={"#805AD5"} _hover={{ bg: "#6133C9" }} color={"white"}>
+            Mi Curriculum
+          </Button>
+        </Link>
       </Flex>
     </>
   );
