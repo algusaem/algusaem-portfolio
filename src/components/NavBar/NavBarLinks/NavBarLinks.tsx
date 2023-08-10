@@ -4,8 +4,8 @@ import NavBarLink from "./NavBarLink/NavBarLink";
 import { linkMap } from "./LinkMaps/linkMap";
 import { NavBarLinksProps } from "@/interfaces/Nav/Nav";
 
-const linkNamesES: string[] = ["Inicio", "Proyectos", "Contacto"];
-const linkNamesEN: string[] = ["About", "Projects", "Contact"];
+const linkNamesES: string[] = ["Inicio", "Proyectos"];
+const linkNamesEN: string[] = ["About", "Projects"];
 
 const NavBarLinks: React.FC<NavBarLinksProps> = ({ direction = "row" }) => {
   return (

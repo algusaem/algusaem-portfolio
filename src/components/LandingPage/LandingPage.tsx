@@ -8,6 +8,7 @@ import MyTechnologies from "./MyTechnologies/MyTechnologies";
 import MyWork from "./MyWork/MyWork";
 import AvatarBox from "./AvatarBox/AvatarBox";
 import useFadeIn from "../Hooks/useFadeIn";
+import MyContact from "./MyContact/MyContact";
 
 const MotionFlex = motion(Flex);
 
@@ -37,6 +38,9 @@ const LandingPage = () => {
 
           <LandingPageHeading>Mi Trabajo</LandingPageHeading>
           <MyWork />
+
+          <LandingPageHeading>Mis Redes</LandingPageHeading>
+          <MyContact />
         </Box>
       </FadeIn>
     </MotionFlex>

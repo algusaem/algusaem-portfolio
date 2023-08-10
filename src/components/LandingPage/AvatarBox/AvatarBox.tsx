@@ -40,6 +40,7 @@ const AvatarBox = () => {
         src="/fotoPerfil.png"
         border="2px solid gray"
         boxShadow="lg"
+        userSelect={"none"}
       />
     </Flex>
   );
