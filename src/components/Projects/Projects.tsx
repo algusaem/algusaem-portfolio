@@ -1,7 +1,10 @@
 import React from "react";
 import useFadeIn from "../Hooks/useFadeIn";
 import LandingPageHeading from "../LandingPage/LandingPageHeading/LandingPageHeading";
-import { Flex, GridItem, SimpleGrid } from "@chakra-ui/react";
+import { Flex, Text, Button, Box, Icon } from "@chakra-ui/react";
+import { AiFillGithub } from "react-icons/ai";
+import Project from "./Project/Project";
+import TaskManager from "./Project/TaskManager/TaskManager";
 
 const Contact = () => {
   const FadeIn = useFadeIn();
@@ -9,31 +12,58 @@ const Contact = () => {
   return (
     <FadeIn>
       <LandingPageHeading>Mis Proyectos</LandingPageHeading>
-      <SimpleGrid
+      <Flex
         w={"100%"}
-        columns={2}
         gap={2}
         p={4}
         alignItems="center"
         justifyItems="center"
+        flexFlow={"column"}
       >
-        <Item>Proyecto 1</Item>
-        <Item>Proyecto 2</Item>
-        <Item>Proyecto 3</Item>
-        <Item>Proyecto 4</Item>
-      </SimpleGrid>
+        <Flex flexFlow={"column"} w={"100%"} px={4}>
+          <TaskManager />
+        </Flex>
+      </Flex>
     </FadeIn>
   );
 };
 
 export default Contact;
 
-const Item = ({ children }: { children: string }) => {
-  return (
-    <GridItem p={4} bg={"gray"} w={"100%"}>
-      <Flex w={"100%"} justify={"center"}>
+export const UsedTech = ({ children }: { children: string }) => (
+  <Box
+    w={"fit-content"}
+    bg={"#5AD580"}
+    p={2}
+    borderRadius={"sm"}
+    color={"white"}
+  >
+    <Text>{children}</Text>
+  </Box>
+);
+
+export const MoreInfo = ({
+  children,
+  src,
+}: {
+  children: string;
+  src: string;
+}) => (
+  <Box maxW={"100%"}>
+    <Button
+      color={"white"}
+      bg={"#805AD5"}
+      _hover={{ bg: "#6133C9" }}
+      w={"max-content"}
+      maxWidth="100%"
+      onClick={() => {
+        window.open(src, "_blank");
+      }}
+    >
+      <Icon as={AiFillGithub} mr={1} />
+      <Text fontSize={["xs", "md"]} isTruncated>
         {children}
-      </Flex>
-    </GridItem>
-  );
-};
+      </Text>
+    </Button>
+  </Box>
+);
