@@ -10,7 +10,6 @@ const fadeIn = {
   visible: { opacity: 1, transition: { duration: 0.5 } },
 };
 
-// Custom hook to control the fade-in animation used when clicking on the NavBar
 const useFadeIn = () => {
   const [isContentLoaded, setIsContentLoaded] = useState(false);
 

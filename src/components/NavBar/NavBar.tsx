@@ -1,4 +1,3 @@
-// NavBar.tsx
 import React, { useContext } from "react";
 import {
   useColorMode,
@@ -6,13 +5,46 @@ import {
   useDisclosure,
   Icon,
   useMediaQuery,
+  Box,
+  Flex,
+  Button,
+  Stack,
+  BoxProps,
 } from "@chakra-ui/react";
-import { Box, Flex, Button, Stack, Text } from "@chakra-ui/react";
+
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import NavBarLinks from "./NavBarLinks/NavBarLinks";
 import { LangContext } from "@/app/providers";
 import { GiHamburgerMenu } from "react-icons/gi";
 import NavBarDrawer from "./NavBarDrawer/NavBarDrawer";
+import Link from "next/link";
+
+const bounce = `
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-5px);
+    }
+    60% {
+      transform: translateY(-3px);
+    }
+  }
+`;
+
+const AnimatedText: React.FC<BoxProps> = (props) => (
+  <Box
+    as="span"
+    _hover={{
+      color: "#5ad580",
+      animation: "bounce 1s",
+    }}
+    userSelect="none"
+    css={bounce}
+    {...props}
+  />
+);
 
 export const NavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -33,11 +65,15 @@ export const NavBar = () => {
   };
 
   return (
-    <Box bg={boxBg} px={4} position="sticky" top={0} zIndex={1}>
+    <Box bg={boxBg} px={4}>
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
         {isLargerThan580 ? (
           <>
-            <Text fontWeight={"bold"}>{displayName}</Text>
+            <AnimatedText fontWeight={"bold"}>
+              <Link href={`/`} passHref>
+                {displayName}
+              </Link>
+            </AnimatedText>
             <NavBarLinks />
           </>
         ) : (
@@ -45,7 +81,7 @@ export const NavBar = () => {
             <Button onClick={onOpen} aria-label="Navigation Menu">
               <Icon as={GiHamburgerMenu} />
             </Button>
-            <Text fontWeight={"bold"}>{displayName}</Text>
+            <AnimatedText fontWeight={"bold"}>{displayName}</AnimatedText>
             <NavBarDrawer isOpen={isOpen} onClose={onClose} />
           </>
         )}

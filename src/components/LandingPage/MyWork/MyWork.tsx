@@ -48,7 +48,7 @@ const MyWork = () => {
       <Flex width={"100%"} align={"center"} justify={"center"} p={4}>
         <Box width={"90%"}>
           <Text fontSize="md" color="gray.500" textAlign={"justify"}>
-            Desarrollo Web Full Stack de Aplicaciones basadas en React
+            Desarrollo Web Full Stack de Aplicaciones basadas en React y Next
             relacionadas con Ingeniería Civil, Modelado 3D y Modelos BIM.
           </Text>
         </Box>

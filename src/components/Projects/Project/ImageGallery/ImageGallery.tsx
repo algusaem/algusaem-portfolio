@@ -19,8 +19,6 @@ const MotionBox = motion(Box);
 
 const ImageGallery = ({ routes }: { routes: string[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isLeftHovered, setLeftHovered] = useState(false);
-  const [isRightHovered, setRightHovered] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const goToPrevious = () => {
@@ -48,7 +46,7 @@ const ImageGallery = ({ routes }: { routes: string[] }) => {
         <Image
           src={routes[currentIndex]}
           alt={`Image ${currentIndex}`}
-          objectFit="cover" // This ensures the image covers the full width and height of its box
+          objectFit="cover"
           borderRadius={"xl"}
         />
       </AspectRatio>
@@ -70,8 +68,6 @@ const ImageGallery = ({ routes }: { routes: string[] }) => {
           }}
           bg={"#805AD5"}
           _hover={{ bg: "#6133C9" }}
-          onMouseEnter={() => setLeftHovered(true)}
-          onMouseLeave={() => setLeftHovered(false)}
         >
           <Icon as={AiFillCaretLeft} color={"white"} />
         </Button>
@@ -85,8 +81,6 @@ const ImageGallery = ({ routes }: { routes: string[] }) => {
           }}
           bg={"#805AD5"}
           _hover={{ bg: "#6133C9" }}
-          onMouseEnter={() => setRightHovered(true)}
-          onMouseLeave={() => setRightHovered(false)}
         >
           <Icon as={AiFillCaretRight} color={"white"} />
         </Button>

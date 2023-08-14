@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect, createContext, ReactNode } from "react";
 import { CacheProvider } from "@chakra-ui/next-js";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider, Container, Text, extendTheme } from "@chakra-ui/react";
 import { checkLanguage } from "@/utils/checkLanguage";
 import { Flex, Spinner } from "@chakra-ui/react";
+import NavBar from "@/components/NavBar/NavBar";
 
 type LangContextType = {
   lang: string | null;
@@ -67,7 +68,15 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <CacheProvider>
       <ChakraProvider theme={theme}>
         <LangContext.Provider value={{ lang, setLang }}>
-          {children}
+          <Container w={"100vw"} h={"100vh"}>
+            <NavBar />
+            {children}
+            <footer>
+              <Flex w={"100%"} justify={"center"} pb={4}>
+                <Text fontSize={"sm"}>© 2023 Alex Gutierrez</Text>
+              </Flex>
+            </footer>
+          </Container>
         </LangContext.Provider>
       </ChakraProvider>
     </CacheProvider>

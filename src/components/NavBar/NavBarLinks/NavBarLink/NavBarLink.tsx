@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { NavBarLinkProps } from "@/interfaces/Nav/Nav";
 import styled from "@emotion/styled";
