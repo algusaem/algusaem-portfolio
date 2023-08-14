@@ -91,9 +91,9 @@ export const NavBar = () => {
             <Button onClick={toggleColorMode}>
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             </Button>
-            <Button onClick={toggleLanguage}>
+            {/* <Button onClick={toggleLanguage}>
               {lang === "es" ? "ES" : "EN"}
-            </Button>
+            </Button> */}
           </Stack>
         </Flex>
       </Flex>
