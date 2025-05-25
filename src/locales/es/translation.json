@@ -1,0 +1,36 @@
+{
+  "about": {
+    "jobTitle": "Desarrollador Web Frontend",
+    "headings": {
+      "aboutMe": "Sobre mí",
+      "myStudies": "Mis estudios",
+      "myTechnologies": "Mis tecnologías",
+      "myWork": "Mi trabajo",
+      "mySocials": "Mis redes"
+    },
+    "aboutMe": {
+      "p1": "Soy un <c>Desarrollador Web</c> residente en el <c>País Vasco</c>. Me considero una persona <c>resolutiva</c>, muy <c>motivada</c>, amante de las <c>nuevas tecnologías</c> y en constante <c>evolución</c> y <c>aprendizaje</c>.",
+      "p2": "Me apasiona la programación, disfruto de <c>nuevos retos</c> y me preocupa mucho el <c>correcto desarrollo</c>, <c>clean code</c> y las <c>buenas prácticas</c> en mis proyectos.",
+      "p3": "A pesar de residir en el <c>País Vasco</c>, estoy abierto a trabajar en cualquier lugar del planeta. ¡Domino el <c>Inglés</c> y estaría encantado de practicarlo!",
+      "resume": "¡Descarga mi currículum!"
+    },
+    "myEducation": {
+      "title1": "Desarrollo de Aplicaciones Web",
+      "title2": "Asistencia a la Dirección",
+      "title3": "Gestión Administrativa"
+    },
+    "myWork": {
+      "oreka": {
+        "title": "Desarrollador Web Full Stack",
+        "time": "Mayo 2025 - Actualidad",
+        "description": "Desarrollo web Full Stack y diseño UI/UX de aplicaciones multiplataforma basadas en React y Next.js, integradas con sistemas SAP y soluciones de gestión empresarial."
+      },
+      "gestioma": {
+        "title": "Desarrollador Web Full Stack",
+        "time": "Diciembre 2022 - Mayo 2025",
+        "description": "Desarrollo web Full Stack de aplicaciones basadas en React y Next.js, orientadas a Ingeniería Civil, Modelado 3D y sistemas BIM."
+      }
+    }
+  },
+  "projects": {}
+}

@@ -2,13 +2,17 @@ import React from "react";
 import { Icon, ListItem, List, Button } from "@chakra-ui/react";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import Link from "next/link";
+import useLang from "@/components/Hooks/useLang";
 
 const MyContact = () => {
+  const { lang } = useLang();
+  const engLocale = lang === "en" ? "?locale=en_US" : "";
+
   return (
     <List p={4}>
       <ContactLink
         icon={BsLinkedin}
-        link={"https://www.linkedin.com/in/alex-gutierrez-56b91224a/"}
+        link={`https://www.linkedin.com/in/alex-gutierrez-56b91224a/${engLocale}`}
       >
         Alex Gutierrez
       </ContactLink>

@@ -1,0 +1,36 @@
+{
+  "about": {
+    "jobTitle": "Frontend Web Developer",
+    "headings": {
+      "aboutMe": "About me",
+      "myStudies": "My education",
+      "myTechnologies": "My technologies",
+      "myWork": "My work",
+      "mySocials": "My socials"
+    },
+    "aboutMe": {
+      "p1": "I am a <c>Web Developer</c> based in the <c>Basque Country</c>. I consider myself a <c>problem-solver</c>, very <c>motivated</c>, passionate about <c>new technologies</c>, and constantly <c>evolving</c> and <c>learning</c>.",
+      "p2": "I am deeply passionate about programming, enjoy <c>new challenges</c> and care deeply about <c>correct development</c>, <c>clean code</c> and <c>best practices</c> in my projects.",
+      "p3": "Even though I live in <c>Spain</c>, I am open to working anywhere in the world. I speak <c>English</c> and would love to practice it!",
+      "resume": "¡Download my resume!"
+    },
+    "myEducation": {
+      "title1": "Bachelor's in Web Development",
+      "title2": "Bachelor's in Business Management Assistance",
+      "title3": "Vocational Certificate in Administrative Management"
+    },
+    "myWork": {
+      "oreka": {
+        "title": "Full Stack Web Developer",
+        "time": "May 2025 - Present",
+        "description": "Full Stack web development and UI/UX design of React and Next.js-based cross-platform applications integrated with SAP systems and business management solutions."
+      },
+      "gestioma": {
+        "title": "Full Stack Web Developer",
+        "time": "December 2022 - May 2025",
+        "description": "Full-stack web development of React and Next.js-based applications related to Civil Engineering, 3D modeling, and BIM systems."
+      }
+    }
+  },
+  "projects": {}
+}

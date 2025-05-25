@@ -9,11 +9,13 @@ import MyWork from "./MyWork/MyWork";
 import AvatarBox from "./AvatarBox/AvatarBox";
 import useFadeIn from "../Hooks/useFadeIn";
 import MyContact from "./MyContact/MyContact";
+import { useTranslation } from "react-i18next";
 
 const MotionFlex = motion(Flex);
 
 const LandingPage = () => {
   const FadeIn = useFadeIn();
+  const { t } = useTranslation();
 
   return (
     <MotionFlex
@@ -27,19 +29,25 @@ const LandingPage = () => {
         <Box w={"100%"} h={"100%"}>
           <AvatarBox />
 
-          <LandingPageHeading>Sobre Mí</LandingPageHeading>
+          <LandingPageHeading>{t("about.headings.aboutMe")}</LandingPageHeading>
           <AboutMe />
 
-          <LandingPageHeading>Mis Estudios</LandingPageHeading>
+          <LandingPageHeading>
+            {t("about.headings.myStudies")}
+          </LandingPageHeading>
           <MyStudiesList />
 
-          <LandingPageHeading>Mis Tecnologías</LandingPageHeading>
+          <LandingPageHeading>
+            {t("about.headings.myTechnologies")}
+          </LandingPageHeading>
           <MyTechnologies />
 
-          <LandingPageHeading>Mi Trabajo</LandingPageHeading>
+          <LandingPageHeading>{t("about.headings.myWork")}</LandingPageHeading>
           <MyWork />
 
-          <LandingPageHeading>Mis Redes</LandingPageHeading>
+          <LandingPageHeading>
+            {t("about.headings.mySocials")}
+          </LandingPageHeading>
           <MyContact />
         </Box>
       </FadeIn>

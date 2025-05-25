@@ -13,7 +13,6 @@ const useLang = () => {
   const toggleLang = useCallback(() => {
     const newLang = lang === "es" ? "en" : "es";
     setLang(newLang);
-    localStorage.setItem("lang", newLang);
   }, [lang, setLang]);
 
   return { lang, setLang, toggleLang };

@@ -6,22 +6,25 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const MyStudiesList = () => {
+  const { t } = useTranslation();
+
   return (
     <List px={4} pt={1}>
       <MyStudiesListItem>
-        Desarrollo de Aplicaciones Web
+        {t("about.myEducation.title1")}
         <MyStudiesYear>2023</MyStudiesYear>
       </MyStudiesListItem>
 
       <MyStudiesListItem>
-        Asistencia a la Dirección
+        {t("about.myEducation.title2")}
         <MyStudiesYear>2019</MyStudiesYear>
       </MyStudiesListItem>
 
       <MyStudiesListItem>
-        Gestión Administrativa
+        {t("about.myEducation.title3")}
         <MyStudiesYear>2017</MyStudiesYear>
       </MyStudiesListItem>
     </List>

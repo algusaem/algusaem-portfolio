@@ -1,38 +1,30 @@
+"use client";
 import React from "react";
 import { Button, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import Link from "next/link";
+import { useTranslation, Trans } from "react-i18next";
 
 const AboutMe = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Paragraph>
-        Soy un <ColoredText>Desarrollador Web</ColoredText> residente en el{" "}
-        <ColoredText>País Vasco</ColoredText>. Me considero una persona{" "}
-        <ColoredText>resolutiva</ColoredText>, muy{" "}
-        <ColoredText>motivada</ColoredText>, amante de las{" "}
-        <ColoredText>nuevas tecnologías</ColoredText> y en constante{" "}
-        <ColoredText>evolución</ColoredText> y{" "}
-        <ColoredText>aprendizaje</ColoredText>.
+        <Trans i18nKey="about.aboutMe.p1" components={{ c: <ColoredText /> }} />
       </Paragraph>
 
       <Paragraph>
-        Me apasiona la programación, disfruto de{" "}
-        <ColoredText>nuevos retos</ColoredText> y me preocupa mucho el{" "}
-        <ColoredText>correcto desarrollo</ColoredText>,{" "}
-        <ColoredText>clean code</ColoredText> y las{" "}
-        <ColoredText>buenas prácticas</ColoredText> en mis proyectos.
+        <Trans i18nKey="about.aboutMe.p2" components={{ c: <ColoredText /> }} />
       </Paragraph>
 
       <Paragraph>
-        A pesar de residir en el <ColoredText>País Vasco</ColoredText>, estoy
-        abierto a trabajar en cualquier lugar del planeta. ¡Domino el{" "}
-        <ColoredText>Inglés</ColoredText> y estaría encantado de practicarlo!
+        <Trans i18nKey="about.aboutMe.p3" components={{ c: <ColoredText /> }} />
       </Paragraph>
 
-      <Flex width={"100%"} align={"center"} justify={"center"} py={2}>
+      <Flex width="100%" align="center" justify="center" py={2}>
         <Link href="/CV_ESP.pdf" passHref>
-          <Button bg={"#805AD5"} _hover={{ bg: "#6133C9" }} color={"white"}>
-            Mi Curriculum
+          <Button bg="#805AD5" _hover={{ bg: "#6133C9" }} color="white">
+            {t("about.aboutMe.resume")}
           </Button>
         </Link>
       </Flex>
@@ -46,10 +38,10 @@ const Paragraph: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
     <Text
       color={useColorModeValue("black", "white")}
-      fontSize={"xl"}
+      fontSize="xl"
       px={4}
       lineHeight={1.5}
-      align={"justify"}
+      align="justify"
       mb={4}
     >
       {children}
@@ -57,6 +49,8 @@ const Paragraph: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   );
 };
 
-const ColoredText = ({ children }: { children: string }) => {
-  return <span style={{ color: "#805AD5" }}>{children}</span>;
-};
+const ColoredText = ({ children }: { children?: React.ReactNode }) => (
+  <Text as={"span"} color="#805AD5">
+    {children}
+  </Text>
+);

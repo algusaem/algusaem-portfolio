@@ -3,8 +3,10 @@ import { Box, Text, Flex } from "@chakra-ui/react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { WorkItemProps } from "@/interfaces/Work/Work";
+import { useTranslation } from "react-i18next";
 
 const MyWork = () => {
+  const { t } = useTranslation();
   const handleLogoGestiomaClick = () => {
     window.open("https://gestioma.com/", "_blank");
   };
@@ -25,18 +27,18 @@ const MyWork = () => {
         logo={"/orekaLogo.jpg"}
         alt="Logo OrekaIT"
         onClick={handleLogoOrekaClick}
-        title="Desarrollador Web Fullstack"
-        duration="Mayo 2025 - Actualidad"
-        description="Desarrollo Web Fullstack y diseño de Aplicaciones multiplataforma vinculadas a sistemas SAP y soluciones de gestión empresarial."
+        title={t("about.myWork.oreka.title")}
+        duration={t("about.myWork.oreka.time")}
+        description={t("about.myWork.oreka.description")}
       />
 
       <MyWorkItem
         logo={"/gestiomaLogo.jpg"}
         alt="Logo GESTIOMA"
         onClick={handleLogoGestiomaClick}
-        title="Desarrollador Web Fullstack"
-        duration="Diciembre 2022 - Mayo 2025"
-        description="Desarrollo Web Fullstack de Aplicaciones basadas en React y Next relacionadas con Ingeniería Civil, Modelado 3D y Modelos BIM."
+        title={t("about.myWork.gestioma.title")}
+        duration={t("about.myWork.gestioma.time")}
+        description={t("about.myWork.gestioma.description")}
       />
     </Flex>
   );

@@ -1,5 +1,8 @@
+"use client";
+import { Container, Flex, Text } from "@chakra-ui/react";
 import "./globals.css";
 import { Providers } from "./providers";
+import NavBar from "@/components/NavBar/NavBar";
 
 export const metadata = {
   title: "Portfolio Alex Gutierrez",
@@ -14,7 +17,17 @@ export default function RootLayout({
   return (
     <html style={{ scrollBehavior: "smooth" }}>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Container w={"100vw"} h={"100vh"}>
+            <NavBar />
+            {children}
+            <footer>
+              <Flex w={"100%"} justify={"center"} pb={4}>
+                <Text fontSize={"sm"}>© 2025 Alex Gutierrez</Text>
+              </Flex>
+            </footer>
+          </Container>
+        </Providers>
       </body>
     </html>
   );

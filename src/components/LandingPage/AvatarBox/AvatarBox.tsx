@@ -1,3 +1,4 @@
+"use client";
 import {
   Flex,
   useColorModeValue,
@@ -6,8 +7,10 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const AvatarBox = () => {
+  const { t } = useTranslation();
   const direction: "column" | "row" =
     useBreakpointValue({ base: "column", sm: "row" }) || "row";
 
@@ -31,7 +34,7 @@ const AvatarBox = () => {
           Alex Gutierrez
         </Text>
         <Text fontSize="large" lineHeight={1.5}>
-          Desarrollador Web Frontend
+          {t("about.jobTitle")}
         </Text>
       </Flex>
       <Avatar
