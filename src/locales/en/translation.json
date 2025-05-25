@@ -32,5 +32,32 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "heading": "My projects",
+    "items": {
+      "taskManager": {
+        "p1": "A task management application that allows users to create, organize, and delete tasks within customizable lists.",
+        "p2": "Includes a simple yet fully functional authentication system."
+      },
+      "portfolio": {
+        "p1": "Portfolio of Alex Gutierrez (this website). A complete rework of the previous version, which was an outdated single-page application.",
+        "p2": "The goal was to create a cleaner, more elegant, minimalist design with improved responsiveness and enhanced accessibility (themes, translations, etc.)."
+      },
+      "videogameDatabase": {
+        "title": "Videogame Database",
+        "p1": "An information platform covering all types of video games.",
+        "p2": "It integrates the rawg.io API to retrieve comprehensive data, including Metacritic scores."
+      },
+      "employeeManager": {
+        "title": "Employee Manager",
+        "p1": "An employee management system that allows creation, editing, deletion, and storage of users, each assigned specific roles.",
+        "p2": "Backed by a Java (Spring Boot) API and a MySQL database."
+      },
+      "pkmnWeight": {
+        "title": "How much does my Pokémon weigh?",
+        "p1": "Developed as a simple and efficient tool to dynamically determine the weight of any Pokémon.",
+        "p2": "Automatically updates with new entries from each game release, leveraging the PokeAPI to stay updated."
+      }
+    }
+  }
 }

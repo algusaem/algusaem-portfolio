@@ -4,8 +4,10 @@ import { MoreInfo } from "../Projects";
 import React from "react";
 import ImageGallery from "./ImageGallery/ImageGallery";
 import { taskManagerImages } from "../projectImagesRoutes";
+import { useTranslation } from "react-i18next";
 
 const TaskManager = () => {
+  const { t } = useTranslation();
   return (
     <Box mb={8}>
       <Heading textAlign={"center"} textDecorationLine={"underline"}>
@@ -15,13 +17,11 @@ const TaskManager = () => {
       <ImageGallery routes={taskManagerImages} />
       <br />
       <Text textAlign={"justify"} lineHeight={1.5}>
-        Aplicación que permite crear, guardar y borrar tareas, además de
-        organizarlas en listas, que a su vez pueden crearse, guardarse y/o
-        borrarse.
+        {t("projects.items.taskManager.p1")}
       </Text>
       <br />
       <Text textAlign={"justify"} lineHeight={1.5}>
-        La aplicación incluye un sistema de login simple y totalmente funcional.
+        {t("projects.items.taskManager.p2")}
       </Text>
       <Flex w={"100%"} gap={1} my={4} flexWrap={"wrap"} justify={"center"}>
         <UsedTech>HTML</UsedTech>
@@ -37,10 +37,10 @@ const TaskManager = () => {
       <Flex w={"100%"} justify="center" flexWrap={"wrap"} gap={2}>
         <GoToWeb src={"https://task-manager-mu-neon.vercel.app/"}>Web</GoToWeb>
         <MoreInfo src={"https://github.com/algusaem/task-manager"}>
-          Github (Frontend)
+          Github (Front End)
         </MoreInfo>
         <MoreInfo src={"https://github.com/algusaem/task-manager-api"}>
-          Github (Backend)
+          Github (Back End)
         </MoreInfo>
       </Flex>
     </Box>

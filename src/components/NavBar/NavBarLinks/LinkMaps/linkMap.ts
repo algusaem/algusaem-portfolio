@@ -1,6 +1,6 @@
 export const linkMap: { [key: string]: string } = {
-  Inicio: "",
-  About: "",
+  "Sobre mí": "",
+  "About me": "",
   Proyectos: "projects",
   Projects: "projects",
   Contacto: "contact",

@@ -4,24 +4,24 @@ import { MoreInfo } from "../Projects";
 import React from "react";
 import ImageGallery from "./ImageGallery/ImageGallery";
 import { employeeManagerImages } from "../projectImagesRoutes";
+import { useTranslation } from "react-i18next";
 
 const EmployeeManagerApp = () => {
+  const { t } = useTranslation();
   return (
     <Box mb={8}>
       <Heading textAlign={"center"} textDecorationLine={"underline"}>
-        Task Manager
+        {t("projects.items.employeeManager.title")}
       </Heading>
       <br />
       <ImageGallery routes={employeeManagerImages} />
       <br />
       <Text textAlign={"justify"} lineHeight={1.5}>
-        Aplicación de gestión de empleados que permite crear, guardar borrar y
-        editar usuarios que a su vez tienen roles.
+        {t("projects.items.employeeManager.p1")}
       </Text>
       <br />
       <Text textAlign={"justify"} lineHeight={1.5}>
-        Se apoya en una API desarrollada en Java (Spring Boot) y en una Base de
-        Datos MySQL
+        {t("projects.items.employeeManager.p2")}
       </Text>
       <Flex w={"100%"} gap={1} my={4} flexWrap={"wrap"} justify={"center"}>
         <UsedTech>HTML</UsedTech>
@@ -36,12 +36,12 @@ const EmployeeManagerApp = () => {
           Web
         </GoToWeb>
         <MoreInfo src={"https://github.com/algusaem/employeemanagerapp"}>
-          Github (Frontend)
+          Github (Front End)
         </MoreInfo>
         <MoreInfo
           src={"https://github.com/algusaem/employeemanager-springboot-api"}
         >
-          Github (Backend)
+          Github (Back End)
         </MoreInfo>
       </Flex>
     </Box>

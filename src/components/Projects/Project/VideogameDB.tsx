@@ -4,36 +4,23 @@ import { MoreInfo } from "../Projects";
 import React from "react";
 import ImageGallery from "./ImageGallery/ImageGallery";
 import { videogameBDImages } from "../projectImagesRoutes";
-import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const VideogameDB = () => {
+  const { t } = useTranslation();
   return (
     <Box mb={8}>
       <Heading textAlign={"center"} textDecorationLine={"underline"}>
-        Base de Datos de Videojuegos
+        {t("projects.items.videogameDatabase.title")}
       </Heading>
       <br />
       <ImageGallery routes={videogameBDImages} />
       <br />
       <Text textAlign={"justify"} lineHeight={1.5}>
-        Plataforma de información relacionada con todo tipo de videojuegos.
+        {t("projects.items.videogameDatabase.p1")}
       </Text>
       <br />
-      <Text lineHeight={1.5}>
-        Utiliza la API de{" "}
-        <Link href={"https://rawg.io/"} target="_blank">
-          <Text
-            as={"span"}
-            fontWeight={"bold"}
-            color={"#805AD5"}
-            _hover={{ color: "#6133C9" }}
-          >
-            rawg.io
-          </Text>
-        </Link>{" "}
-        para obtener toda la información. Además la web contiene notas de
-        metacritic.
-      </Text>
+      <Text lineHeight={1.5}>{t("projects.items.videogameDatabase.p2")}</Text>
 
       <Flex w={"100%"} gap={1} my={4} flexWrap={"wrap"} justify={"center"}>
         <UsedTech>HTML</UsedTech>

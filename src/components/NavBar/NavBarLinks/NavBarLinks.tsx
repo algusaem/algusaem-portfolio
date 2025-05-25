@@ -5,8 +5,8 @@ import { linkMap } from "./LinkMaps/linkMap";
 import { NavBarLinksProps } from "@/interfaces/Nav/Nav";
 import useLang from "@/components/Hooks/useLang";
 
-const linkNamesES: string[] = ["Inicio", "Proyectos"];
-const linkNamesEN: string[] = ["About Me", "Projects"];
+const linkNamesES: string[] = ["Sobre mí", "Proyectos"];
+const linkNamesEN: string[] = ["About me", "Projects"];
 
 const NavBarLinks: React.FC<NavBarLinksProps> = ({ direction = "row" }) => {
   const { lang } = useLang();
@@ -14,7 +14,7 @@ const NavBarLinks: React.FC<NavBarLinksProps> = ({ direction = "row" }) => {
 
   return (
     <Box>
-      <Flex direction={direction} wrap="nowrap">
+      <Flex direction={direction} wrap="nowrap" gap={2}>
         {linkNames.map((name) => (
           <NavBarLink displayName={name} routeName={linkMap[name]} key={name} />
         ))}

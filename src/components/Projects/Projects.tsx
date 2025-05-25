@@ -8,13 +8,15 @@ import Portfolio from "./Project/Portfolio";
 import VideogameDB from "./Project/VideogameDB";
 import EmployeeManagerApp from "./Project/EmployeeManagerApp";
 import PkmnWeight from "./Project/PkmnWeight";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const FadeIn = useFadeIn();
+  const { t } = useTranslation();
 
   return (
     <FadeIn>
-      <LandingPageHeading>Mis Proyectos</LandingPageHeading>
+      <LandingPageHeading>{t("projects.heading")}</LandingPageHeading>
       <Flex
         w={"100%"}
         gap={2}

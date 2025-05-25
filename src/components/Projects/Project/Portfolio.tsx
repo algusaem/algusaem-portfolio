@@ -5,8 +5,10 @@ import React from "react";
 import ImageGallery from "./ImageGallery/ImageGallery";
 import { portfolioImages } from "../projectImagesRoutes";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const Portfolio = () => {
+  const { t } = useTranslation();
   return (
     <Box mb={8}>
       <Heading textAlign={"center"} textDecorationLine={"underline"}>
@@ -16,28 +18,10 @@ const Portfolio = () => {
       <ImageGallery routes={portfolioImages} />
       <br />
       <Text textAlign={"justify"} lineHeight={1.5}>
-        Portfolio de Alex Gutierrez (ésta web). Rework de{" "}
-        <Link
-          href={"https://github.com/algusaem/algusaem.github.io"}
-          target="_blank"
-        >
-          <Text
-            as={"span"}
-            fontWeight={"bold"}
-            color={"#805AD5"}
-            _hover={{ color: "#6133C9" }}
-          >
-            ésta
-          </Text>
-        </Link>{" "}
-        versión anterior, la cual es una SPA desactualizada.
+        {t("projects.items.portfolio.p1")}
       </Text>
       <br />
-      <Text lineHeight={1.5}>
-        El objetivo ha sido crear una versión más sobria, elegante, sencilla y
-        minimalista. Más responsiva y con mayor accesibilidad (modo oscuro o
-        claro por ejemplo).
-      </Text>
+      <Text lineHeight={1.5}>{t("projects.items.portfolio.p2")}</Text>
 
       <Flex w={"100%"} gap={1} my={4} flexWrap={"wrap"} justify={"center"}>
         <UsedTech>HTML</UsedTech>

@@ -32,5 +32,32 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "heading": "Mis proyectos",
+    "items": {
+      "taskManager": {
+        "p1": "Aplicación que permite crear, guardar y borrar tareas, además de organizarlas en listas, que a su vez pueden crearse, guardarse y/o borrarse.",
+        "p2": "La aplicación incluye un sistema de login simple y totalmente funcional."
+      },
+      "portfolio": {
+        "p1": "Portfolio de Alex Gutierrez (ésta web). Rework de la versión anterior, la cual es una SPA desactualizada.",
+        "p2": "El objetivo ha sido crear una versión más sobria, elegante, sencilla y minimalista. Más responsiva y con mayor accesibilidad (temas, traducciones...)."
+      },
+      "videogameDatabase": {
+        "title": "Base de Datos de Videojuegos",
+        "p1": "Plataforma de información relacionada con todo tipo de videojuegos.",
+        "p2": "Utiliza la API de rawg.io para obtener toda la información. Además la web contiene notas de metacritic."
+      },
+      "employeeManager": {
+        "title": "Gestión de Empleados",
+        "p1": "Aplicación de gestión de empleados que permite crear, guardar borrar y editar usuarios que a su vez tienen roles.",
+        "p2": "Se apoya en una API desarrollada en Java (Spring Boot) y en una Base de Datos MySQL."
+      },
+      "pkmnWeight": {
+        "title": "¿Cuánto pesa mi Pokémon?",
+        "p1": "Desarrollada con la intención de proveer una herramienta sencilla y directa para determinar el peso de cualquier Pokémon de forma dinámica.",
+        "p2": "Además se actualiza de forma automática con los nuevos Pokémon que van saliendo con cada nueva entrega. Se apoya en la API de PokeAPI para actualizar los datos."
+      }
+    }
+  }
 }
