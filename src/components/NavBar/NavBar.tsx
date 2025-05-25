@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import {
   useColorMode,
   useColorModeValue,
@@ -11,13 +11,12 @@ import {
   Stack,
   BoxProps,
 } from "@chakra-ui/react";
-
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import NavBarLinks from "./NavBarLinks/NavBarLinks";
-import { LangContext } from "@/app/providers";
 import { GiHamburgerMenu } from "react-icons/gi";
 import NavBarDrawer from "./NavBarDrawer/NavBarDrawer";
 import Link from "next/link";
+import useLang from "../Hooks/useLang";
 
 const bounce = `
   @keyframes bounce {
@@ -47,22 +46,13 @@ const AnimatedText: React.FC<BoxProps> = (props) => (
 );
 
 export const NavBar = () => {
+  const { lang, toggleLang } = useLang();
   const { colorMode, toggleColorMode } = useColorMode();
   const boxBg = useColorModeValue("white", "gray.800");
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isLargerThan580] = useMediaQuery("(min-width: 580px)");
   const displayName = isLargerThan580 ? "Alex Gutierrez" : "AG";
-
-  const context = useContext(LangContext);
-  if (!context) {
-    return null;
-  }
-  const { lang, setLang } = context;
-  const toggleLanguage = () => {
-    setLang(lang === "es" ? "en" : "es");
-    localStorage.setItem("lang", lang === "es" ? "en" : "es");
-  };
 
   return (
     <Box bg={boxBg} px={4}>
@@ -88,12 +78,10 @@ export const NavBar = () => {
 
         <Flex alignItems={"center"}>
           <Stack direction={"row"} spacing={2}>
+            <Button onClick={toggleLang}>{lang === "es" ? "ES" : "EN"}</Button>
             <Button onClick={toggleColorMode}>
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             </Button>
-            {/* <Button onClick={toggleLanguage}>
-              {lang === "es" ? "ES" : "EN"}
-            </Button> */}
           </Stack>
         </Flex>
       </Flex>
