@@ -1,8 +1,9 @@
 "use client";
-import { Container, Flex, Text } from "@chakra-ui/react";
+import { ColorModeScript, Container, Flex, Text } from "@chakra-ui/react";
 import "./globals.css";
 import { Providers } from "./providers";
 import NavBar from "@/components/NavBar/NavBar";
+import { theme } from "@/theme/theme";
 
 export const metadata = {
   title: "Portfolio Alex Gutierrez",
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html style={{ scrollBehavior: "smooth" }}>
       <body>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Providers>
           <Container w={"100vw"} h={"100vh"}>
             <NavBar />
