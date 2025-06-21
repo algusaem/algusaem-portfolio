@@ -57,6 +57,10 @@
         "title": "How much does my Pokémon weigh?",
         "p1": "Developed as a simple and efficient tool to dynamically determine the weight of any Pokémon.",
         "p2": "Automatically updates with new entries from each game release, leveraging the PokeAPI to stay updated."
+      },
+      "gameQueue": {
+        "p1": "Information platform showcasing video games releasing this month, featuring images, store links, and detailed info about selected titles.",
+        "p2": "It uses the rawg.io API to fetch comprehensive game data and multimedia."
       }
     }
   }
