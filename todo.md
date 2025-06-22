@@ -1,2 +1,1 @@
-- Add new project
 - Rework project's image-preview onclick to a more modern solution
