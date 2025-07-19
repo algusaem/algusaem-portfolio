@@ -4,7 +4,7 @@ import {
   useColorModeValue,
   useDisclosure,
   Icon,
-  useMediaQuery,
+  useBreakpointValue,
   Box,
   Flex,
   Button,
@@ -51,13 +51,14 @@ export const NavBar = () => {
   const boxBg = useColorModeValue("white", "gray.800");
 
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [isLargerThan580] = useMediaQuery("(min-width: 580px)");
-  const displayName = isLargerThan580 ? "Alex Gutierrez" : "AG";
+
+  const isDesktop = useBreakpointValue({ base: false, md: true });
+  const displayName = useBreakpointValue({ base: "AG", md: "Alex Gutierrez" });
 
   return (
     <Box bg={boxBg} px={4}>
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-        {isLargerThan580 ? (
+        {isDesktop ? (
           <>
             <AnimatedText fontWeight={"bold"}>
               <Link href={`/`} passHref>
