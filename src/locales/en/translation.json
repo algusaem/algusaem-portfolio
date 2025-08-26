@@ -48,10 +48,10 @@
         "p1": "An information platform covering all types of video games.",
         "p2": "It integrates the rawg.io API to retrieve comprehensive data, including Metacritic scores."
       },
-      "employeeManager": {
-        "title": "Employee Manager",
-        "p1": "An employee management system that allows creation, editing, deletion, and storage of users, each assigned specific roles.",
-        "p2": "Backed by a Java (Spring Boot) API and a MySQL database."
+      "liftMonitor": {
+        "title": "LiftMonitor",
+        "p1": "Web application designed for tracking and recording strength training sessions, allowing users to store lifted weights in a structured way for each workout.",
+        "p2": "It includes a login and registration system, JWT-based authentication, and its own database."
       },
       "pkmnWeight": {
         "title": "How much does my Pokémon weigh?",

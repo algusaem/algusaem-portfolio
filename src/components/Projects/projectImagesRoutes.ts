@@ -5,5 +5,10 @@ export const employeeManagerImages = [
   "/EmployeeManager1.png",
   "/EmployeeManager2.png",
 ];
+export const liftMonitorImages = [
+  "/liftMonitor1.png",
+  "/liftMonitor2.png",
+  "/liftMonitor3.png",
+];
 export const pkmnWeightImages = ["/pkmn1.png", "/pkmn2.png"];
 export const gameQueueImages = ["/gameQueue_1.png", "/gameQueue_2.png"];

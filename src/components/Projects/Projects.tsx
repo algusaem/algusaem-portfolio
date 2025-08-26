@@ -10,6 +10,7 @@ import EmployeeManagerApp from "./Project/EmployeeManagerApp";
 import PkmnWeight from "./Project/PkmnWeight";
 import { useTranslation } from "react-i18next";
 import GameQueue from "./Project/GameQueue";
+import LiftMonitor from "./Project/LiftMonitor";
 
 const Contact = () => {
   const FadeIn = useFadeIn();
@@ -28,10 +29,10 @@ const Contact = () => {
       >
         <Flex flexFlow={"column"} w={"100%"} px={4}>
           <GameQueue />
+          <LiftMonitor />
           <TaskManager />
-          <Portfolio />
-          <EmployeeManagerApp />
           <PkmnWeight />
+          <Portfolio />
         </Flex>
       </Flex>
     </FadeIn>
