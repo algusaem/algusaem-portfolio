@@ -7,7 +7,7 @@ import TaskManager from "./Project/TaskManager";
 import Portfolio from "./Project/Portfolio";
 import VideogameDB from "./Project/VideogameDB";
 import EmployeeManagerApp from "./Project/EmployeeManagerApp";
-import PkmnWeight from "./Project/PkmnWeight";
+import Layera from "./Project/Layera";
 import { useTranslation } from "react-i18next";
 import GameQueue from "./Project/GameQueue";
 import LiftMonitor from "./Project/LiftMonitor";
@@ -28,10 +28,10 @@ const Contact = () => {
         flexFlow={"column"}
       >
         <Flex flexFlow={"column"} w={"100%"} px={4}>
+          <Layera />
           <GameQueue />
           <LiftMonitor />
           <TaskManager />
-          <PkmnWeight />
           <Portfolio />
         </Flex>
       </Flex>

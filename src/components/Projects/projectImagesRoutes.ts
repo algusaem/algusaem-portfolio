@@ -10,5 +10,11 @@ export const liftMonitorImages = [
   "/liftMonitor2.png",
   "/liftMonitor3.png",
 ];
-export const pkmnWeightImages = ["/pkmn1.png", "/pkmn2.png"];
+export const layeraImages = [
+  "/layera_1.png",
+  "/layera_2.png",
+  "/layera_3.png",
+  "/layera_4.png",
+  "/layera_5.png",
+];
 export const gameQueueImages = ["/gameQueue_1.png", "/gameQueue_2.png"];
