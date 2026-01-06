@@ -21,14 +21,14 @@
     },
     "myWork": {
       "oreka": {
-        "title": "Desarrollador Web Full Stack",
+        "title": "Desarrollador Fullstack | Responsable Técnico",
         "time": "Mayo 2025 - Actualidad",
-        "description": "Desarrollo web Full Stack y diseño UI/UX de aplicaciones multiplataforma basadas en React y Next.js, integradas con sistemas SAP y soluciones de gestión empresarial."
+        "description": "Definición y ejecución técnica de productos web, incluyendo decisiones de arquitectura, tecnologías, desarrollo end-to-end y despliegue productivo."
       },
       "gestioma": {
-        "title": "Desarrollador Web Full Stack",
+        "title": "Desarrollador Fullstack",
         "time": "Diciembre 2022 - Mayo 2025",
-        "description": "Desarrollo web Full Stack de aplicaciones basadas en React y Next.js, orientadas a Ingeniería Civil, Modelado 3D y sistemas BIM."
+        "description": "Desarrollo de plataformas web técnicas para ingeniería y modelado 3D, participando en la arquitectura Fullstack, gestión de datos y despliegue de aplicaciones."
       }
     }
   },

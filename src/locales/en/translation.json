@@ -21,14 +21,14 @@
     },
     "myWork": {
       "oreka": {
-        "title": "Full Stack Web Developer",
+        "title": "Fullstack Developer | Technical Owner",
         "time": "May 2025 - Present",
-        "description": "Full Stack web development and UI/UX design of React and Next.js-based cross-platform applications integrated with SAP systems and business management solutions."
+        "description": "Technical definition and execution of web products, including architectural decisions, technology selection, end-to-end development, and production deployment."
       },
       "gestioma": {
-        "title": "Full Stack Web Developer",
+        "title": "Fullstack Developer",
         "time": "December 2022 - May 2025",
-        "description": "Full-stack web development of React and Next.js-based applications related to Civil Engineering, 3D modeling, and BIM systems."
+        "description": "Development of technical web platforms for engineering and 3D modeling, contributing to fullstack architecture, data management, and application deployment."
       }
     }
   },
