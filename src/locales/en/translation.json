@@ -9,10 +9,10 @@
       "mySocials": "My socials"
     },
     "aboutMe": {
-      "p1": "I am a <c>Web Developer</c> based in the <c>Basque Country</c>. I consider myself a <c>problem-solver</c>, very <c>motivated</c>, passionate about <c>new technologies</c>, and constantly <c>evolving</c> and <c>learning</c>.",
-      "p2": "I am deeply passionate about programming, enjoy <c>new challenges</c> and care deeply about <c>correct development</c>, <c>clean code</c> and <c>best practices</c> in my projects.",
-      "p3": "Even though I live in <c>Spain</c>, I am open to working anywhere in the world. I speak <c>English</c> and would love to practice it!",
-      "resume": "¡Download my resume!"
+      "p1": "I am a <c>Frontend Developer</c> with experience in <c>fullstack</c> environments, specialized in building <c>modern</c>, <c>accessible</c>, and <c>maintainable</c> interfaces, with a strong focus on <c>UI/UX</c>, <c>clean code</c>, and <c>best practices</c>.",
+      "p2": "I have participated in the <c>technical direction of projects</c>, coordinating teams and taking responsibility for <c>code review and validation</c> before its <c>deployment</c>, ensuring quality and consistency.",
+      "p3": "Although my main focus is Frontend, I work <c>end-to-end</c>, covering Frontend, Backend, and deployments. I am based in the <c>Basque Country</c>, with availability for <c>remote work</c> and collaboration in <c>international environments</c>.",
+      "resume": "Download my résumé!"
     },
     "myEducation": {
       "title1": "Bachelor's in Web Development",
