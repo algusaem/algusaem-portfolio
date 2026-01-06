@@ -20,6 +20,17 @@ export const TechnologyComponent: React.FC<TechnologyComponentProps> = ({
   children,
   technology,
 }) => {
+  const noIconTechnologies = [
+    "Emotion",
+    "Zustand",
+    "Xeokit",
+    "GeoJSON",
+    "Neon",
+    "ShadCN",
+    "Mantine UI",
+  ];
+  const shouldShowIcon = !noIconTechnologies.includes(technology.name);
+
   return (
     <Flex
       sx={{ userSelect: "none" }}
@@ -38,9 +49,7 @@ export const TechnologyComponent: React.FC<TechnologyComponentProps> = ({
         window.open(technology.link, "_blank");
       }}
     >
-      {technology.name !== "Emotion" && technology.name !== "Zustand" && (
-        <Icon as={technology.icon} boxSize={"8"} />
-      )}
+      {shouldShowIcon && <Icon as={technology.icon} boxSize={"8"} />}
       <Text mx={2}>{children}</Text>
     </Flex>
   );
