@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useTranslation, Trans } from "react-i18next";
 
 const AboutMe = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const cvPath = i18n.language === "es" ? "/CV_ESP.pdf" : "/CV_ENG.pdf";
 
   return (
     <>
@@ -22,7 +23,7 @@ const AboutMe = () => {
       </Paragraph>
 
       <Flex width="100%" align="center" justify="center" py={2}>
-        <Link href="/CV_ESP.pdf" passHref>
+        <Link href={cvPath} passHref>
           <Button bg="#805AD5" _hover={{ bg: "#6133C9" }} color="white">
             {t("about.aboutMe.resume")}
           </Button>
