@@ -55,7 +55,7 @@ const MyWorkItem = ({
   onClick,
 }: WorkItemProps) => (
   <>
-    <Flex width={"100%"} justify={"center"} align={"center"} p={4}>
+    <Flex width={"100%"} justify={"center"} align={"center"} p={3}>
       <Box
         as={motion.div}
         borderRadius="3xl"
@@ -63,29 +63,29 @@ const MyWorkItem = ({
         overflow="hidden"
         cursor={"pointer"}
         onClick={onClick}
-        whileHover={{ scale: 1.2 }}
+        whileHover={{ scale: 1.15 }}
       >
-        <Image src={logo} alt={alt} width={150} height={150} />
+        <Image src={logo} alt={alt} width={120} height={120} />
       </Box>
     </Flex>
 
     <Text
-      fontSize="lg"
+      fontSize="md"
       fontWeight="bold"
       textDecor={"underline"}
-      lineHeight={1.5}
+      lineHeight={1.4}
     >
       {title}
     </Text>
-    <Text fontSize="md">{duration}</Text>
+    <Text fontSize="sm">{duration}</Text>
 
-    <Flex width={"100%"} align={"center"} justify={"center"} p={4}>
+    <Flex width={"100%"} align={"center"} justify={"center"} p={3}>
       <Box width={"90%"}>
         <Text
-          fontSize="md"
+          fontSize="sm"
           color="gray.500"
           textAlign={"justify"}
-          lineHeight={1.2}
+          lineHeight={1.3}
         >
           {description}
         </Text>

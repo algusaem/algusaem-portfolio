@@ -5,11 +5,11 @@ const LandingPageHeading: React.FC<React.PropsWithChildren<{}>> = ({
   children,
 }) => {
   return (
-    <Box px={4} pt={4} mb={2}>
+    <Box px={4} pt={3} mb={1}>
       <Heading
-        borderBottom={"4px solid #5AD580"}
+        borderBottom={"3px solid #5AD580"}
         w={"fit-content"}
-        size={"md"}
+        size={"sm"}
         as={"h2"}
       >
         {children}

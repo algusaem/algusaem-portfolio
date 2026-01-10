@@ -45,11 +45,12 @@ export const UsedTech = ({ children }: { children: string }) => (
   <Box
     w={"fit-content"}
     bg={"#5AD580"}
-    p={2}
+    px={2}
+    py={1}
     borderRadius={"sm"}
     color={"white"}
   >
-    <Text>{children}</Text>
+    <Text fontSize="xs">{children}</Text>
   </Box>
 );
 
@@ -62,6 +63,7 @@ export const MoreInfo = ({
 }) => (
   <Box maxW={"100%"}>
     <Button
+      size="sm"
       color={"white"}
       bg={"#805AD5"}
       _hover={{ bg: "#6133C9" }}
@@ -71,8 +73,8 @@ export const MoreInfo = ({
         window.open(src, "_blank");
       }}
     >
-      <Icon as={AiFillGithub} mr={1} />
-      <Text fontSize={["xs", "md"]} isTruncated>
+      <Icon as={AiFillGithub} mr={1} boxSize={3} />
+      <Text fontSize="xs" isTruncated>
         {children}
       </Text>
     </Button>
@@ -88,6 +90,7 @@ export const GoToWeb = ({
 }) => (
   <Box maxW={"100%"}>
     <Button
+      size="sm"
       color={"white"}
       bg={"#805AD5"}
       _hover={{ bg: "#6133C9" }}
@@ -97,8 +100,8 @@ export const GoToWeb = ({
         window.open(src, "_blank");
       }}
     >
-      <Icon as={AiOutlineGlobal} mr={1} />
-      <Text fontSize={["xs", "md"]} isTruncated>
+      <Icon as={AiOutlineGlobal} mr={1} boxSize={3} />
+      <Text fontSize="xs" isTruncated>
         {children}
       </Text>
     </Button>

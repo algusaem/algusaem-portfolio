@@ -30,15 +30,15 @@ const AvatarBox = () => {
         direction="column"
         textAlign={direction === "column" ? "center" : "left"}
       >
-        <Text fontSize="3xl" fontWeight="bold" lineHeight={1.5}>
+        <Text fontSize="2xl" fontWeight="bold" lineHeight={1.4}>
           Alex Gutierrez
         </Text>
-        <Text fontSize="large" lineHeight={1.5}>
+        <Text fontSize="md" lineHeight={1.4}>
           {t("about.jobTitle")}
         </Text>
       </Flex>
       <Avatar
-        size="2xl"
+        size="xl"
         name="Alex Gutierrez"
         src="/fotoPerfil.png"
         border="2px solid gray"

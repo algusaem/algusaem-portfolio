@@ -39,11 +39,11 @@ const Paragraph: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
     <Text
       color={useColorModeValue("black", "white")}
-      fontSize="xl"
+      fontSize="md"
       px={4}
       lineHeight={1.5}
       align="justify"
-      mb={4}
+      mb={3}
     >
       {children}
     </Text>

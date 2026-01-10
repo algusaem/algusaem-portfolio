@@ -40,12 +40,12 @@ const MyStudiesListItem: React.FC<{ children: React.ReactNode[] }> = ({
     <ListItem
       color={useColorModeValue("black", "white")}
       w={"100%"}
-      mb={4}
-      fontSize={"xl"}
-      lineHeight={1.5}
+      mb={3}
+      fontSize={"md"}
+      lineHeight={1.4}
     >
       <Flex justifyContent={"space-between"}>
-        <Text fontSize={"xl"}>{children[0]}</Text>
+        <Text fontSize={"md"}>{children[0]}</Text>
         {children[1]}
       </Flex>
     </ListItem>
@@ -54,7 +54,7 @@ const MyStudiesListItem: React.FC<{ children: React.ReactNode[] }> = ({
 
 const MyStudiesYear: React.FC<{ children: string }> = ({ children }) => {
   return (
-    <Text fontSize={"xl"} fontWeight={"bold"} mx={1}>
+    <Text fontSize={"md"} fontWeight={"bold"} mx={1}>
       {children}
     </Text>
   );

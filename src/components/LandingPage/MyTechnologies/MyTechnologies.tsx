@@ -37,8 +37,9 @@ export const TechnologyComponent: React.FC<TechnologyComponentProps> = ({
       w={"auto"}
       h={"auto"}
       align="center"
-      m={2}
-      p={2}
+      m={1}
+      px={2}
+      py={1}
       border={"1px solid"}
       borderColor={useColorModeValue("black", "white")}
       borderRadius={"5px"}
@@ -49,8 +50,8 @@ export const TechnologyComponent: React.FC<TechnologyComponentProps> = ({
         window.open(technology.link, "_blank");
       }}
     >
-      {shouldShowIcon && <Icon as={technology.icon} boxSize={"8"} />}
-      <Text mx={2}>{children}</Text>
+      {shouldShowIcon && <Icon as={technology.icon} boxSize={"5"} />}
+      <Text mx={1} fontSize="xs">{children}</Text>
     </Flex>
   );
 };
