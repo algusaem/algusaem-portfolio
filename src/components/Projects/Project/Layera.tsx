@@ -9,18 +9,18 @@ import { useTranslation } from "react-i18next";
 const Layera = () => {
   const { t } = useTranslation();
   return (
-    <Box mb={6}>
-      <Heading size="md" textAlign={"center"} textDecorationLine={"underline"}>
+    <Box mb={8}>
+      <Heading textAlign={"center"} textDecorationLine={"underline"}>
         {t("projects.items.layera.title")}
       </Heading>
       <br />
       <ImageGallery routes={layeraImages} />
       <br />
-      <Text fontSize="sm" textAlign={"justify"} lineHeight={1.4}>
+      <Text textAlign={"justify"} lineHeight={1.5}>
         {t("projects.items.layera.p1")}
       </Text>
       <br />
-      <Text fontSize="sm" lineHeight={1.4}>{t("projects.items.layera.p2")}</Text>
+      <Text lineHeight={1.5}>{t("projects.items.layera.p2")}</Text>
 
       <Flex w={"100%"} gap={1} my={4} flexWrap={"wrap"} justify={"center"}>
         <UsedTech>Google Generative AI</UsedTech>

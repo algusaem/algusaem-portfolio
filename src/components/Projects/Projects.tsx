@@ -44,13 +44,22 @@ export default Contact;
 export const UsedTech = ({ children }: { children: string }) => (
   <Box
     w={"fit-content"}
-    bg={"#5AD580"}
+    bg={"gray.100"}
+    _dark={{ bg: "gray.700" }}
     px={2}
     py={1}
-    borderRadius={"sm"}
-    color={"white"}
+    borderRadius={"md"}
+    border={"1px solid"}
+    borderColor={"gray.300"}
   >
-    <Text fontSize="xs">{children}</Text>
+    <Text
+      fontSize="xs"
+      fontWeight="medium"
+      color={"gray.700"}
+      _dark={{ color: "gray.200" }}
+    >
+      {children}
+    </Text>
   </Box>
 );
 
