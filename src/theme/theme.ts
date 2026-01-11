@@ -7,10 +7,11 @@ const config: ThemeConfig = {
 
 const colors = {
   brand: {
-    primary: "#805AD5",
-    primaryHover: "#6133C9",
-    primaryLight: "#9475d8",
-    secondary: "#5AD580",
+    primary: "#6366F1",
+    primaryHover: "#4F46E5",
+    primaryLight: "#818CF8",
+    secondary: "#F59E0B",
+    secondaryHover: "#D97706",
   },
 };
 
