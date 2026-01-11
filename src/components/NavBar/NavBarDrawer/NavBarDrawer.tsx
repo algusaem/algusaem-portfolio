@@ -15,7 +15,7 @@ const NavBarDrawer: React.FC<DisclosureProps> = ({ isOpen, onClose }) => {
     <Drawer isOpen={isOpen} onClose={onClose}>
       <DrawerOverlay>
         <DrawerContent>
-          <DrawerCloseButton _hover={{ bg: "#5ad580", color: "white" }} />
+          <DrawerCloseButton _hover={{ bg: "brand.secondary", color: "white" }} />
           <DrawerHeader>Alex Gutierrez</DrawerHeader>
           <DrawerBody>
             <NavBarLinks direction="column" />

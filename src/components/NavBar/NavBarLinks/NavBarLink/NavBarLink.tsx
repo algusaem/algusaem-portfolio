@@ -17,7 +17,7 @@ const NavBarLink: React.FC<NavBarLinkProps> = ({ displayName, routeName }) => {
           bottom: 0,
           height: "2px",
           width: "100%",
-          backgroundColor: "#5ad580",
+          backgroundColor: "brand.secondary",
           transform: "scaleX(0)",
           transformOrigin: "left",
           transition: "transform 0.2s ease-in-out",

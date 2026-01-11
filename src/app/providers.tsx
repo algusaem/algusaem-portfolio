@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import { CacheProvider } from "@chakra-ui/next-js";
-import { ChakraProvider, theme } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
+import { theme } from "@/theme/theme";
 import { Flex, Spinner } from "@chakra-ui/react";
 import useLangProvider from "@/components/Hooks/useLangProvider";
 import { LangContext } from "@/components/Contexts/LangContext";

@@ -36,8 +36,7 @@ const ContactLink: React.FC<{
       <Link href={link} target="_blank">
         <Button
           leftIcon={iconComponent}
-          bg={"transparent"}
-          _hover={{ bg: "#805AD5", color: "white" }}
+          variant="brandGhost"
           fontSize={"lg"}
         >
           {children}

@@ -36,7 +36,7 @@ const AnimatedText: React.FC<BoxProps> = (props) => (
   <Box
     as="span"
     _hover={{
-      color: "#5ad580",
+      color: "brand.secondary",
       animation: "bounce 1s",
     }}
     userSelect="none"

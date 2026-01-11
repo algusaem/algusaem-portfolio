@@ -44,8 +44,7 @@ export default Contact;
 export const UsedTech = ({ children }: { children: string }) => (
   <Box
     w={"fit-content"}
-    bg={"gray.100"}
-    _dark={{ bg: "gray.700" }}
+    bg="bg.surface"
     px={2}
     py={1}
     borderRadius={"md"}
@@ -55,8 +54,7 @@ export const UsedTech = ({ children }: { children: string }) => (
     <Text
       fontSize="xs"
       fontWeight="medium"
-      color={"gray.700"}
-      _dark={{ color: "gray.200" }}
+      color="text.muted"
     >
       {children}
     </Text>
@@ -73,9 +71,7 @@ export const MoreInfo = ({
   <Box maxW={"100%"}>
     <Button
       size="sm"
-      color={"white"}
-      bg={"#805AD5"}
-      _hover={{ bg: "#6133C9" }}
+      variant="brand"
       w={"max-content"}
       maxWidth="100%"
       onClick={() => {
@@ -100,9 +96,7 @@ export const GoToWeb = ({
   <Box maxW={"100%"}>
     <Button
       size="sm"
-      color={"white"}
-      bg={"#805AD5"}
-      _hover={{ bg: "#6133C9" }}
+      variant="brand"
       w={"max-content"}
       maxWidth="100%"
       onClick={() => {

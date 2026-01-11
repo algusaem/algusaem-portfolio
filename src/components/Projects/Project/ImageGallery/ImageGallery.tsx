@@ -66,8 +66,7 @@ const ImageGallery = ({ routes }: { routes: string[] }) => {
             e.stopPropagation();
             goToPrevious();
           }}
-          bg={"#805AD5"}
-          _hover={{ bg: "#6133C9" }}
+          variant="brand"
         >
           <Icon as={AiFillCaretLeft} color={"white"} />
         </Button>
@@ -79,8 +78,7 @@ const ImageGallery = ({ routes }: { routes: string[] }) => {
             e.stopPropagation();
             goToNext();
           }}
-          bg={"#805AD5"}
-          _hover={{ bg: "#6133C9" }}
+          variant="brand"
         >
           <Icon as={AiFillCaretRight} color={"white"} />
         </Button>

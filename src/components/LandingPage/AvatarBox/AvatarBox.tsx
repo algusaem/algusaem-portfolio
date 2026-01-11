@@ -1,7 +1,6 @@
 "use client";
 import {
   Flex,
-  useColorModeValue,
   Text,
   Avatar,
   useBreakpointValue,
@@ -23,7 +22,7 @@ const AvatarBox = () => {
       p={4}
       m={4}
       mt={8}
-      bg={useColorModeValue("gray.100", "gray.700")}
+      bg="bg.surface"
       gap={4}
     >
       <Flex

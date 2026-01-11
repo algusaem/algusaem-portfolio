@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Button, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+import { Button, Flex, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { useTranslation, Trans } from "react-i18next";
 
@@ -24,7 +24,7 @@ const AboutMe = () => {
 
       <Flex width="100%" align="center" justify="center" py={2}>
         <Link href={cvPath} passHref>
-          <Button bg="#805AD5" _hover={{ bg: "#6133C9" }} color="white">
+          <Button variant="brand">
             {t("about.aboutMe.resume")}
           </Button>
         </Link>
@@ -38,7 +38,7 @@ export default AboutMe;
 const Paragraph: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
     <Text
-      color={useColorModeValue("black", "white")}
+      color="text.primary"
       fontSize="md"
       px={4}
       lineHeight={1.5}
@@ -51,7 +51,7 @@ const Paragraph: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 };
 
 const ColoredText = ({ children }: { children?: React.ReactNode }) => (
-  <Text as={"span"} color="#805AD5">
+  <Text as={"span"} color="brand.primary">
     {children}
   </Text>
 );
