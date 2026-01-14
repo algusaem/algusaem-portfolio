@@ -1,6 +1,6 @@
 {
   "about": {
-    "jobTitle": "Frontend Web Developer",
+    "jobTitle": "Fullstack Developer",
     "headings": {
       "aboutMe": "About me",
       "myStudies": "My education",
@@ -9,9 +9,9 @@
       "mySocials": "My socials"
     },
     "aboutMe": {
-      "p1": "I am a <c>Frontend Developer</c> with experience in <c>fullstack</c> environments, specialized in building <c>modern</c>, <c>accessible</c>, and <c>maintainable</c> interfaces, with a strong focus on <c>UI/UX</c>, <c>clean code</c>, and <c>best practices</c>.",
-      "p2": "I have participated in the <c>technical direction of projects</c>, coordinating teams and taking responsibility for <c>code review and validation</c> before its <c>deployment</c>, ensuring quality and consistency.",
-      "p3": "Although my main focus is Frontend, I work <c>end-to-end</c>, covering Frontend, Backend, and deployments. I am based in the <c>Basque Country</c>, with availability for <c>remote work</c> and collaboration in <c>international environments</c>.",
+      "p1": "I am a <c>Fullstack Developer</c> with experience building <c>end-to-end web applications</c>, covering <c>Frontend</c>, <c>Backend</c>, and <c>deployments</c>. I specialize in developing <c>modern</c>, <c>accessible</c>, and <c>maintainable</c> interfaces, with a strong focus on <c>UI/UX</c>, <c>clean code</c>, and <c>best practices</c>.",
+      "p2": "I have participated in the <c>technical direction of projects</c>, coordinating teams and taking responsibility for <c>code review and validation</c> prior to <c>deployment</c>, ensuring <c>quality</c>, <c>consistency</c>, and <c>scalability</c>.",
+      "p3": "I am based in the <c>Basque Country</c>, with availability for <c>remote work</c> and collaboration in <c>international environments</c>.",
       "resume": "Download my résumé!"
     },
     "myEducation": {

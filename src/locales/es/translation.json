@@ -1,6 +1,6 @@
 {
   "about": {
-    "jobTitle": "Desarrollador Web Frontend",
+    "jobTitle": "Desarrollador Fullstack",
     "headings": {
       "aboutMe": "Sobre mí",
       "myStudies": "Mis estudios",
@@ -9,9 +9,9 @@
       "mySocials": "Mis redes"
     },
     "aboutMe": {
-      "p1": "Soy un <c>Desarrollador Frontend</c> con experiencia en entornos <c>Fullstack</c>, especializado en la construcción de <c>interfaces modernas</c>, <c>accesibles</c> y <c>mantenibles</c>, con un fuerte enfoque en <c>UI/UX</c>, <c>clean code</c> y <c>buenas prácticas</c>.",
-      "p2": "He participado en la <c>dirección técnica de proyectos</c>, coordinando equipos y asumiendo la <c>revisión y validación del código</c> antes de su paso a <c>producción</c> para garantizar calidad y coherencia.",
-      "p3": "Aunque mi foco principal es Frontend, trabajo de forma <c>end-to-end</c>, cubriendo Frontend, Backend, y despliegues. Resido en el <c>País Vasco</c>, con disponibilidad para <c>trabajo remoto</c> y colaboración en <c>entornos internacionales</c>.",
+      "p1": "Soy un <c>Desarrollador Fullstack</c> con experiencia construyendo <c>aplicaciones web end-to-end</c>, cubriendo <c>Frontend</c>, <c>Backend</c> y <c>despliegues</c>. Me especializo en desarrollar <c>interfaces modernas</c>, <c>accesibles</c> y <c>mantenibles</c>, con un fuerte enfoque en <c>UI/UX</c>, <c>clean code</c> y <c>buenas prácticas</c>.",
+      "p2": "He participado en la <c>dirección técnica de proyectos</c>, coordinando equipos y asumiendo la responsabilidad de la <c>revisión y validación del código</c> antes del <c>despliegue</c>, garantizando <c>calidad</c>, <c>consistencia</c> y <c>escalabilidad</c>.",
+      "p3": "Resido en el <c>País Vasco</c>, con disponibilidad para <c>trabajo remoto</c> y colaboración en <c>entornos internacionales</c>.",
       "resume": "¡Descarga mi currículum!"
     },
     "myEducation": {
