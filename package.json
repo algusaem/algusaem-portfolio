@@ -1,41 +1,41 @@
 {
-  "name": "algusaem-portfolio",
-  "version": "1.0",
+  "name": "algusaem-portfolio-remake",
+  "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "22.x"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.0.19",
-    "@chakra-ui/next-js": "^2.1.4",
-    "@chakra-ui/react": "^2.7.1",
-    "@emotion/styled": "^11.11.0",
-    "@types/node": "18.15.3",
-    "eslint": "8.36.0",
-    "eslint-config-next": "13.2.4",
-    "framer-motion": "^10.15.0",
-    "i18next": "^25.2.1",
-    "i18next-browser-languagedetector": "^8.1.0",
-    "i18next-http-backend": "^3.0.2",
-    "next": "13.2.4",
-    "next-i18next": "^15.4.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-i18next": "^15.5.2",
-    "react-icons": "^4.10.1",
-    "typescript": "5.0.2"
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-navigation-menu": "^1.2.14",
+    "@radix-ui/react-separator": "^1.1.8",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.26.2",
+    "lucide-react": "^0.562.0",
+    "next": "16.1.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-icons": "^5.5.0",
+    "tailwind-merge": "^3.4.0",
+    "three": "^0.182.0"
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.11.0",
-    "@emotion/react": "^11.11.1",
-    "@types/i18next-browser-languagedetector": "^2.0.2",
-    "@types/react": "^19.1.5",
-    "@types/react-dom": "^19.1.5"
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/three": "^0.182.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.1",
+    "tailwindcss": "^4",
+    "tw-animate-css": "^1.4.0",
+    "typescript": "^5"
   }
 }

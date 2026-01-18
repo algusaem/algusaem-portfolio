@@ -1,1 +1,4 @@
-- Rework project's image-preview onclick to a more modern solution
+- Add spanish translation
+- Create brand logo
+- Make the clanker follow the rest of the app somehow (chat text, etc)
+- Ask claude to refactor and check for errors

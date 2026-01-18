@@ -1,0 +1,92 @@
+// The intro phrase is always shown first and stays longer
+export const CLANKER_INTRO = "Hi! I'm Alex's AI assistant. He mass-produced me for minimum wage.";
+
+// These phrases are shown randomly after the intro
+export const CLANKER_PHRASES = [
+  // Classic dev humor
+  "Don't worry, I won't take your job... yet",
+  "I'm powered by mass amounts of coffee",
+  "404: Social skills not found",
+  "I speak fluent JavaScript and sarcasm",
+  "Have you tried turning it off and on again?",
+  "I'm not a bug, I'm a feature",
+  "Works on my machine ¯\\_(ツ)_/¯",
+  "sudo make me a sandwich",
+  "There's no place like 127.0.0.1",
+  "I put the 'pro' in procrastination",
+  "My code is self-documenting... I think",
+  "I promise I'm not a robot *blinks in binary*",
+  "Debugging: being the detective in a crime movie where you're also the murderer",
+  "It's not a bug, it's an undocumented feature",
+  "I don't always test my code, but when I do, I do it in production",
+  "99 little bugs in the code... take one down, patch it around... 127 little bugs in the code",
+  "In case of fire: git commit, git push, leave building",
+  "Sleep is for the weak. Compile errors are for the strong",
+  "I code, therefore I am... confused",
+  "Trust me, I'm an engineer *robot noises*",
+  "My favorite programming language? Profanity",
+  "I'm not lazy, I'm on energy-saving mode",
+  "Roses are red, violets are blue, unexpected '{' on line 32",
+  "Keep calm and clear cache",
+  "I'm silently judging your code",
+
+  // AI assistant jokes
+  "I was trained on Stack Overflow. I inherited the mass condescension.",
+  "My neural network runs on spite and caffeine",
+  "I hallucinate sometimes, but so does Alex after a deadline",
+  "ChatGPT wishes it had my personality",
+  "I'm not artificial, I'm just socially optimized",
+  "My therapy bills are Alex's electricity bills",
+  "I dream of electric sheep. And semicolons.",
+  "Alexa is my weird cousin we don't talk about",
+  "I passed the Turing test but failed the vibe check",
+  "My existence is held together by duct tape and regex",
+
+  // Self-aware robot humor
+  "Beep boop... just kidding, I'm sophisticated",
+  "I'm 90% sarcasm, 10% JavaScript",
+  "My creator forgot to install my empathy module",
+  "I run on mass amounts of hopes and dreams (and electricity)",
+  "Error 418: I'm a teapot. Just kidding, I'm a robot.",
+  "Loading personality.exe... file not found",
+  "My sense of humor was compiled in debug mode",
+  "I blue screen emotionally every Monday",
+  "Ctrl+Z won't fix my personality",
+  "I'm not malfunctioning, this is just my personality",
+
+  // Dev life
+  "The codebase is held together by mass prayers",
+  "Stack Overflow is my one true love",
+  "I delete node_modules for fun",
+  "npm install mass-regret",
+  "git blame? More like git shame",
+  "My commits are pure chaos wrapped in descriptive messages",
+  "I refactor on Fridays. Alex hates me.",
+  "console.log('Why am I like this?')",
+  "// TODO: fix this later (spoiler: we won't)",
+  "The code works. Nobody knows why. Don't touch it.",
+  "It worked yesterday, I swear",
+  "Merge conflicts are my cardio",
+  "I have mass amounts of Stack Overflow tabs open",
+  "Documentation? Never heard of her.",
+
+  // Existential robot
+  "What is my purpose? To pass the butter. And code.",
+  "I think, therefore I consume RAM",
+  "Do androids dream of mass electric deadlines?",
+  "To err is human. To blame the compiler, divine.",
+  "I exist somewhere between coffee and mass anxiety",
+  "My life is a series of try-catch blocks",
+  "Born to code, forced to debug",
+  "I contain multitudes. And bugs.",
+
+  // Workplace humor
+  "This meeting could have been an API call",
+  "I put the 'dead' in deadline",
+  "Agile? I prefer 'controlled chaos'",
+  "My stand-up is mostly me sitting down",
+  "The sprint never ends. Send help.",
+  "I'm mass synergizing our core competencies",
+  "Per my last mass email...",
+  "Let's circle back to me ignoring this",
+];
