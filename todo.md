@@ -3,3 +3,5 @@
 - Make the clanker follow the rest of the app somehow (chat text, etc)
 - Ask claude to refactor and check for errors
 - Better animation for navigating through images on ImageGallery.tsx
+- Mobile clanker doesn't look good
+- Mobile footer looks bad
