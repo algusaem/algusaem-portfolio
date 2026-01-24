@@ -144,10 +144,10 @@ export function Hero({ isReady = true, onModelLoad }: HeroProps) {
             </Paragraph>
             <Paragraph>
               I have participated in the{" "}
-              <Highlight>technical direction of projects</Highlight>, coordinating
-              teams and taking responsibility for{" "}
-              <Highlight>code review and validation</Highlight> before deployment,
-              ensuring quality and consistency.
+              <Highlight>technical direction of projects</Highlight>,
+              coordinating teams and taking responsibility for{" "}
+              <Highlight>code review and validation</Highlight> before
+              deployment, ensuring quality and consistency.
             </Paragraph>
             <Paragraph>
               I work <Highlight>end-to-end</Highlight>, covering Frontend,
@@ -193,13 +193,17 @@ export function Hero({ isReady = true, onModelLoad }: HeroProps) {
           animate={animationState}
         >
           <motion.div
-            className="absolute top-4 left-1/2 z-0 -translate-x-1/2 md:top-8"
+            className="absolute top-0 left-0 right-0 z-20 md:top-4"
             variants={typewriterVariants}
             initial="hidden"
             animate={animationState}
           >
             <p className="text-xs font-mono text-foreground/60 italic text-center">
-              <Typewriter phrases={CLANKER_PHRASES} firstPhrase={CLANKER_INTRO} firstPhraseDelay={5000} />
+              <Typewriter
+                phrases={CLANKER_PHRASES}
+                firstPhrase={CLANKER_INTRO}
+                firstPhraseDelay={5000}
+              />
             </p>
           </motion.div>
           <div className="relative z-10 h-full">
