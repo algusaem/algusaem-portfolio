@@ -64,7 +64,7 @@ function Model({ pointer, onLoad, isReady = false }: ModelProps) {
       introProgress.current = Math.min(1, introProgress.current + delta * 0.7);
       const t = introProgress.current;
 
-      // Easing function with overshoot (back out)
+      // Standard easeOutBack curve: c1=1.70158, c3=c1+1=2.70158
       const easeOutBack = 1 + 2.7 * Math.pow(t - 1, 3) + 1.7 * Math.pow(t - 1, 2);
 
       // Scale from tiny to 1 with bounce

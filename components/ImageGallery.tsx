@@ -8,6 +8,8 @@ import { ChevronLeft, ChevronRight, ImageIcon, Loader2 } from "lucide-react";
 import { ImageModal } from "./ImageModal";
 import { slideVariants } from "@/lib/animations";
 
+const SWIPE_THRESHOLD_PX = 50;
+
 interface ImageGalleryProps {
   images: string[];
   alt: string;
@@ -52,7 +54,7 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
     const touchEndX = e.changedTouches[0].clientX;
     const diff = touchStartX.current - touchEndX;
 
-    if (Math.abs(diff) > 50) {
+    if (Math.abs(diff) > SWIPE_THRESHOLD_PX) {
       if (diff > 0) {
         nextImage();
       } else {

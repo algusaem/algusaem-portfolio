@@ -6,7 +6,9 @@
       "WebFetch(domain:algusaem.com)",
       "Bash(npm install:*)",
       "Bash(npm run lint)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(wc:*)",
+      "Bash(npx eslint:*)"
     ]
   }
 }

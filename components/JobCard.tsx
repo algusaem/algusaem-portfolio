@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import clsx from "clsx";
 import { motion, useInView } from "framer-motion";
@@ -20,7 +20,6 @@ interface JobCardProps {
 
 export function JobCard({ job, index, isExpanded, onToggle }: JobCardProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
 
   const isInView = useInView(ref, {
     amount: 0.3,
@@ -28,10 +27,6 @@ export function JobCard({ job, index, isExpanded, onToggle }: JobCardProps) {
   });
 
   const hasEntered = useInView(ref, { once: true, amount: 0.2 });
-
-  if (hasEntered && !hasAnimated) {
-    setHasAnimated(true);
-  }
 
   useEffect(() => {
     if (isExpanded && ref.current) {
@@ -61,7 +56,7 @@ export function JobCard({ job, index, isExpanded, onToggle }: JobCardProps) {
         <div className="rounded-xl border-2 border-border bg-card p-5">
           <JobCardHeader
             job={job}
-            hasAnimated={hasAnimated}
+            hasEntered={hasEntered}
             onToggle={onToggle}
             isExpanded={isExpanded}
           />
@@ -70,12 +65,12 @@ export function JobCard({ job, index, isExpanded, onToggle }: JobCardProps) {
 
           <JobCardTechnologies
             technologies={job.technologies}
-            hasAnimated={hasAnimated}
+            hasEntered={hasEntered}
           />
 
           <JobCardToggleButton
             isExpanded={isExpanded}
-            hasAnimated={hasAnimated}
+            hasEntered={hasEntered}
             onToggle={onToggle}
           />
         </div>
@@ -112,12 +107,12 @@ export function JobCard({ job, index, isExpanded, onToggle }: JobCardProps) {
 
 interface JobCardHeaderProps {
   job: Job;
-  hasAnimated: boolean;
+  hasEntered: boolean;
   isExpanded: boolean;
   onToggle: () => void;
 }
 
-function JobCardHeader({ job, hasAnimated, isExpanded, onToggle }: JobCardHeaderProps) {
+function JobCardHeader({ job, hasEntered, isExpanded, onToggle }: JobCardHeaderProps) {
   return (
     <button
       onClick={onToggle}
@@ -127,7 +122,7 @@ function JobCardHeader({ job, hasAnimated, isExpanded, onToggle }: JobCardHeader
       <motion.div
         className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between"
         initial={{ opacity: 0, y: 20 }}
-        animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        animate={hasEntered ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ ...springTransition, delay: 0 }}
       >
         <div>
@@ -149,7 +144,7 @@ function JobCardHeader({ job, hasAnimated, isExpanded, onToggle }: JobCardHeader
       <motion.p
         className="mt-4 text-foreground/80 text-left"
         initial={{ opacity: 0, y: 20 }}
-        animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        animate={hasEntered ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ ...springTransition, delay: 0.1 }}
       >
         {job.description}
@@ -160,15 +155,15 @@ function JobCardHeader({ job, hasAnimated, isExpanded, onToggle }: JobCardHeader
 
 interface JobCardTechnologiesProps {
   technologies: string[];
-  hasAnimated: boolean;
+  hasEntered: boolean;
 }
 
-function JobCardTechnologies({ technologies, hasAnimated }: JobCardTechnologiesProps) {
+function JobCardTechnologies({ technologies, hasEntered }: JobCardTechnologiesProps) {
   return (
     <motion.div
       className="mt-4"
       initial={{ opacity: 0, y: 20 }}
-      animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      animate={hasEntered ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ ...springTransition, delay: 0.2 }}
     >
       <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
@@ -178,7 +173,7 @@ function JobCardTechnologies({ technologies, hasAnimated }: JobCardTechnologiesP
         className="flex flex-wrap gap-2"
         variants={staggerContainer(0.03)}
         initial="hidden"
-        animate={hasAnimated ? "visible" : "hidden"}
+        animate={hasEntered ? "visible" : "hidden"}
       >
         {technologies.map((tech) => (
           <TechBadge key={tech} name={tech} />
@@ -190,16 +185,16 @@ function JobCardTechnologies({ technologies, hasAnimated }: JobCardTechnologiesP
 
 interface JobCardToggleButtonProps {
   isExpanded: boolean;
-  hasAnimated: boolean;
+  hasEntered: boolean;
   onToggle: () => void;
 }
 
-function JobCardToggleButton({ isExpanded, hasAnimated, onToggle }: JobCardToggleButtonProps) {
+function JobCardToggleButton({ isExpanded, hasEntered, onToggle }: JobCardToggleButtonProps) {
   return (
     <motion.div
       className="flex justify-center mt-4"
       initial={{ opacity: 0, y: 20 }}
-      animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      animate={hasEntered ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ ...springTransition, delay: 0.3 }}
     >
       <Button size="sm" variant="outline" onClick={onToggle} className="gap-2">

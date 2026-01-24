@@ -37,6 +37,7 @@ export function Typewriter({ phrases, firstPhrase, firstPhraseDelay = 4000 }: Ty
   };
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const pauseTimeout = useRef<ReturnType<typeof setTimeout>>(null);
 
   useEffect(() => {
     const timeout = setTimeout(
@@ -46,7 +47,7 @@ export function Typewriter({ phrases, firstPhrase, firstPhraseDelay = 4000 }: Ty
             setText(currentPhrase.slice(0, text.length + 1));
           } else {
             const delay = isFirstPhrase.current ? firstPhraseDelay : 2000;
-            setTimeout(() => setIsDeleting(true), delay);
+            pauseTimeout.current = setTimeout(() => setIsDeleting(true), delay);
           }
         } else {
           if (text.length > 0) {
@@ -69,7 +70,12 @@ export function Typewriter({ phrases, firstPhrase, firstPhraseDelay = 4000 }: Ty
       isDeleting ? 30 : 50
     );
 
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+      if (pauseTimeout.current) {
+        clearTimeout(pauseTimeout.current);
+      }
+    };
   }, [text, isDeleting, currentPhrase, phrases, firstPhraseDelay]);
 
   return (
