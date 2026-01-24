@@ -38,14 +38,16 @@ export default function RootLayout({
         className={`${khTeka.variable} ${khTekaMono.variable} font-sans antialiased`}
       >
         {children}
-        <footer className="flex items-center justify-center gap-2 py-8 text-sm text-muted-foreground">
-          <span className="relative flex size-2">
-            <span className="absolute inline-flex size-full animate-ping rounded-full bg-green-400 opacity-75" />
-            <span className="relative inline-flex size-2 rounded-full bg-green-500" />
+        <footer className="px-4 py-8 text-center text-sm text-muted-foreground">
+          <span className="inline-flex items-center gap-1.5">
+            <span className="relative inline-flex size-2">
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex size-2 rounded-full bg-green-500" />
+            </span>
+            Based in the{" "}
+            <span className="font-medium text-foreground">Basque Country, Spain</span>
           </span>
-          Based in the{" "}
-          <span className="font-medium text-foreground">Basque Country, Spain</span>
-          {" "}•{" "}
+          <span className="mx-1.5">•</span>
           <span className="font-medium text-primary">Open to remote</span>
           {" "}worldwide
         </footer>
