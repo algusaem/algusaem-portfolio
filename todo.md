@@ -1,5 +1,4 @@
 - Add spanish translation
 - Create brand logo
 - Make the clanker follow the rest of the app somehow (chat text, etc)
-- Ask claude to refactor and check for errors
 - Better animation for navigating through images on ImageGallery.tsx
