@@ -17,6 +17,7 @@ interface ImageGalleryProps {
 
 export function ImageGallery({ images, alt }: ImageGalleryProps) {
   const [currentImage, setCurrentImage] = useState(0);
+  const [direction, setDirection] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
   const touchStartX = useRef(0);
@@ -34,14 +35,17 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
   }, [images]);
 
   const prevImage = () => {
+    setDirection(-1);
     setCurrentImage(currentImage === 0 ? images.length - 1 : currentImage - 1);
   };
 
   const nextImage = () => {
+    setDirection(1);
     setCurrentImage(currentImage === images.length - 1 ? 0 : currentImage + 1);
   };
 
   const goToImage = (index: number) => {
+    setDirection(index > currentImage ? 1 : -1);
     setCurrentImage(index);
   };
 
@@ -56,9 +60,15 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
 
     if (Math.abs(diff) > SWIPE_THRESHOLD_PX) {
       if (diff > 0) {
-        nextImage();
+        setDirection(1);
+        setCurrentImage(
+          currentImage === images.length - 1 ? 0 : currentImage + 1
+        );
       } else {
-        prevImage();
+        setDirection(-1);
+        setCurrentImage(
+          currentImage === 0 ? images.length - 1 : currentImage - 1
+        );
       }
     }
   };
@@ -88,14 +98,15 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
         </div>
       )}
 
-      <AnimatePresence initial={false} mode="sync">
+      <AnimatePresence initial={false} mode="popLayout" custom={direction}>
         <motion.div
           key={currentImage}
+          custom={direction}
           variants={slideVariants}
           initial="enter"
           animate="center"
           exit="exit"
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="absolute inset-0 rounded-md overflow-hidden"
         >
           <Image
@@ -146,6 +157,7 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
             key="image-modal"
             images={images}
             currentImage={currentImage}
+            direction={direction}
             alt={alt}
             onClose={() => setIsModalOpen(false)}
             onPrev={prevImage}

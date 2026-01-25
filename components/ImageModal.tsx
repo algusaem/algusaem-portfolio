@@ -10,6 +10,7 @@ import { slideVariants } from "@/lib/animations";
 interface ImageModalProps {
   images: string[];
   currentImage: number;
+  direction: number;
   alt: string;
   onClose: () => void;
   onPrev: () => void;
@@ -20,6 +21,7 @@ interface ImageModalProps {
 export function ImageModal({
   images,
   currentImage,
+  direction,
   alt,
   onClose,
   onPrev,
@@ -60,14 +62,15 @@ export function ImageModal({
         className="relative w-[90vw] h-[90vh] overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        <AnimatePresence initial={false} mode="sync">
+        <AnimatePresence initial={false} mode="popLayout" custom={direction}>
           <motion.div
             key={currentImage}
+            custom={direction}
             variants={slideVariants}
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: 0.4, ease: "easeInOut" }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="absolute inset-0"
           >
             <Image

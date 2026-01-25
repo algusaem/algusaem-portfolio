@@ -13,20 +13,21 @@ export const springTransitionSnappy: Transition = {
   damping: 25,
 };
 
-// Slide variants for image galleries/modals
+// Direction-aware slide variants for image galleries/modals
+// Pass direction as custom prop: positive = forward, negative = backward
 export const slideVariants: Variants = {
-  enter: {
-    scale: 0,
+  enter: (direction: number) => ({
+    x: direction > 0 ? "100%" : "-100%",
     opacity: 0,
-  },
+  }),
   center: {
-    scale: 1,
+    x: 0,
     opacity: 1,
   },
-  exit: {
-    scale: 1.5,
+  exit: (direction: number) => ({
+    x: direction > 0 ? "-100%" : "100%",
     opacity: 0,
-  },
+  }),
 };
 
 // Stagger container for children animations
