@@ -65,10 +65,7 @@ export function ImageModal({
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
           {images.map((src, index) => (
-            <div
-              key={index}
-              className="relative min-w-full h-full flex-shrink-0"
-            >
+            <div key={index} className="relative min-w-full h-full shrink-0">
               <Image
                 src={src}
                 alt={`${alt} ${index + 1}`}
@@ -112,7 +109,7 @@ export function ImageModal({
                   "size-2.5 rounded-full transition-colors",
                   i === currentImage
                     ? "bg-primary"
-                    : "bg-white/40 hover:bg-white/60"
+                    : "bg-white/40 hover:bg-white/60",
                 )}
                 aria-label={`Go to image ${i + 1}`}
               />

@@ -44,11 +44,11 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
     if (Math.abs(diff) > SWIPE_THRESHOLD_PX) {
       if (diff > 0) {
         setCurrentImage(
-          currentImage === images.length - 1 ? 0 : currentImage + 1
+          currentImage === images.length - 1 ? 0 : currentImage + 1,
         );
       } else {
         setCurrentImage(
-          currentImage === 0 ? images.length - 1 : currentImage - 1
+          currentImage === 0 ? images.length - 1 : currentImage - 1,
         );
       }
     }
@@ -75,7 +75,7 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
         transition={{ duration: 0.3, ease: "easeOut" }}
       >
         {images.map((src, index) => (
-          <div key={index} className="relative min-w-full h-full flex-shrink-0">
+          <div key={index} className="relative min-w-full h-full shrink-0">
             <Image
               src={src}
               alt={`${alt} ${index + 1}`}
@@ -110,7 +110,7 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
                   "size-2 rounded-full transition-colors",
                   i === currentImage
                     ? "bg-primary"
-                    : "bg-background/60 hover:bg-background/80"
+                    : "bg-background/60 hover:bg-background/80",
                 )}
                 aria-label={`Go to image ${i + 1}`}
               />
