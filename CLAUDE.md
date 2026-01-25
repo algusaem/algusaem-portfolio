@@ -124,7 +124,7 @@ Use theme tokens via Tailwind classes (e.g., `bg-background`, `text-primary`, `b
 ### Animations
 
 - Reuse shared animation variants from `lib/animations.ts`
-- Available exports: `springTransition`, `springTransitionSnappy`, `slideVariants`, `staggerContainer()`, `fadeUpItem`, `scaleFadeItem`, `visibilityVariants`
+- Available exports: `springTransition`, `springTransitionSnappy`, `staggerContainer()`, `fadeUpItem`, `scaleFadeItem`, `visibilityVariants`
 - Only create component-specific variants when the animation is truly unique
 
 ### UX

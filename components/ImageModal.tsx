@@ -4,13 +4,11 @@ import { useEffect } from "react";
 import clsx from "clsx";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { slideVariants } from "@/lib/animations";
+import { motion } from "framer-motion";
 
 interface ImageModalProps {
   images: string[];
   currentImage: number;
-  direction: number;
   alt: string;
   onClose: () => void;
   onPrev: () => void;
@@ -21,7 +19,6 @@ interface ImageModalProps {
 export function ImageModal({
   images,
   currentImage,
-  direction,
   alt,
   onClose,
   onPrev,
@@ -62,25 +59,26 @@ export function ImageModal({
         className="relative w-[90vw] h-[90vh] overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        <AnimatePresence initial={false} mode="popLayout" custom={direction}>
-          <motion.div
-            key={currentImage}
-            custom={direction}
-            variants={slideVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={images[currentImage]}
-              alt={`${alt} ${currentImage + 1}`}
-              fill
-              className="object-contain"
-            />
-          </motion.div>
-        </AnimatePresence>
+        <motion.div
+          className="absolute inset-0 flex"
+          animate={{ x: `${-currentImage * 100}%` }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        >
+          {images.map((src, index) => (
+            <div
+              key={index}
+              className="relative min-w-full h-full flex-shrink-0"
+            >
+              <Image
+                src={src}
+                alt={`${alt} ${index + 1}`}
+                fill
+                className="object-contain"
+                priority={index === 0}
+              />
+            </div>
+          ))}
+        </motion.div>
       </div>
 
       {hasMultipleImages && (

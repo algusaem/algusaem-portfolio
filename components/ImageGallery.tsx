@@ -1,12 +1,11 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import clsx from "clsx";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ImageIcon, Loader2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, ImageIcon } from "lucide-react";
 import { ImageModal } from "./ImageModal";
-import { slideVariants } from "@/lib/animations";
 
 const SWIPE_THRESHOLD_PX = 50;
 
@@ -17,35 +16,19 @@ interface ImageGalleryProps {
 
 export function ImageGallery({ images, alt }: ImageGalleryProps) {
   const [currentImage, setCurrentImage] = useState(0);
-  const [direction, setDirection] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
   const touchStartX = useRef(0);
   const hasMultipleImages = images.length > 1;
 
-  // Preload all images on mount
-  useEffect(() => {
-    images.forEach((src, index) => {
-      const img = new window.Image();
-      img.src = src;
-      img.onload = () => {
-        setLoadedImages((prev) => new Set(prev).add(index));
-      };
-    });
-  }, [images]);
-
   const prevImage = () => {
-    setDirection(-1);
     setCurrentImage(currentImage === 0 ? images.length - 1 : currentImage - 1);
   };
 
   const nextImage = () => {
-    setDirection(1);
     setCurrentImage(currentImage === images.length - 1 ? 0 : currentImage + 1);
   };
 
   const goToImage = (index: number) => {
-    setDirection(index > currentImage ? 1 : -1);
     setCurrentImage(index);
   };
 
@@ -60,21 +43,15 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
 
     if (Math.abs(diff) > SWIPE_THRESHOLD_PX) {
       if (diff > 0) {
-        setDirection(1);
         setCurrentImage(
           currentImage === images.length - 1 ? 0 : currentImage + 1
         );
       } else {
-        setDirection(-1);
         setCurrentImage(
           currentImage === 0 ? images.length - 1 : currentImage - 1
         );
       }
     }
-  };
-
-  const handleImageLoad = (index: number) => {
-    setLoadedImages((prev) => new Set(prev).add(index));
   };
 
   if (images.length === 0) {
@@ -91,34 +68,25 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Loading indicator */}
-      {!loadedImages.has(currentImage) && (
-        <div className="absolute inset-0 flex items-center justify-center bg-muted z-10">
-          <Loader2 className="size-8 text-muted-foreground animate-spin" />
-        </div>
-      )}
-
-      <AnimatePresence initial={false} mode="popLayout" custom={direction}>
-        <motion.div
-          key={currentImage}
-          custom={direction}
-          variants={slideVariants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="absolute inset-0 rounded-md overflow-hidden"
-        >
-          <Image
-            src={images[currentImage]}
-            alt={`${alt} ${currentImage + 1}`}
-            fill
-            className="object-cover cursor-pointer"
-            onClick={() => setIsModalOpen(true)}
-            onLoad={() => handleImageLoad(currentImage)}
-          />
-        </motion.div>
-      </AnimatePresence>
+      {/* Image strip - all images rendered, translated to show current */}
+      <motion.div
+        className="absolute inset-0 flex"
+        animate={{ x: `${-currentImage * 100}%` }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
+        {images.map((src, index) => (
+          <div key={index} className="relative min-w-full h-full flex-shrink-0">
+            <Image
+              src={src}
+              alt={`${alt} ${index + 1}`}
+              fill
+              className="object-cover cursor-pointer"
+              onClick={() => setIsModalOpen(true)}
+              priority={index === 0}
+            />
+          </div>
+        ))}
+      </motion.div>
 
       {hasMultipleImages && (
         <>
@@ -157,7 +125,6 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
             key="image-modal"
             images={images}
             currentImage={currentImage}
-            direction={direction}
             alt={alt}
             onClose={() => setIsModalOpen(false)}
             onPrev={prevImage}
