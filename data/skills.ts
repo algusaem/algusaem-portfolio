@@ -6,6 +6,7 @@ import {
   Server,
   Wrench,
   Sparkles,
+  FlaskConical,
   LucideIcon,
 } from "lucide-react";
 import { IconType } from "react-icons";
@@ -43,6 +44,10 @@ import {
   SiCloudinary,
   SiReactquery,
   SiAuth0,
+  SiGraphql,
+  SiApollographql,
+  SiVitest,
+  SiLucide,
 } from "react-icons/si";
 import { RiNotification3Line } from "react-icons/ri";
 import { VscGear } from "react-icons/vsc";
@@ -135,6 +140,9 @@ export const skillCategories: SkillCategory[] = [
     color: "bg-emerald-200/70 text-emerald-900",
     skills: [
       { name: "Node.js", icon: SiNodedotjs },
+      { name: "GraphQL", icon: SiGraphql },
+      { name: "Apollo GraphQL", icon: SiApollographql },
+      { name: "WebSockets" },
       { name: "Prisma", icon: SiPrisma },
       { name: "NextAuth", icon: SiAuth0 },
       { name: "PostgreSQL", icon: SiPostgresql },
@@ -159,13 +167,23 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
+    name: "Testing",
+    icon: FlaskConical,
+    color: "bg-teal-200/70 text-teal-900",
+    skills: [
+      { name: "Playwright" },
+      { name: "Vitest", icon: SiVitest },
+    ],
+  },
+  {
     name: "Other",
     icon: Sparkles,
     color: "bg-rose-200/70 text-rose-900",
     skills: [
       { name: "Three.js", icon: SiThreedotjs },
       { name: "Google Gemini", icon: SiGooglegemini },
-      { name: "Lucide" },
+      { name: "AI" },
+      { name: "Lucide", icon: SiLucide },
       { name: "Sonner", icon: RiNotification3Line },
       { name: "clsx" },
       { name: "Agile Methodologies" },

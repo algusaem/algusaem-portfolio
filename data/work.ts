@@ -16,10 +16,53 @@ export function getJobBySlug(slug: string): Job | undefined {
 
 export const jobs: Job[] = [
   {
+    slug: "babooni",
+    company: "Babooni Technologies",
+    role: "Full-Stack Developer",
+    period: "February 2026 - Present",
+    description:
+      "Full-stack development of web platforms as part of a cross-functional team, covering frontend, backend, and database across the full delivery cycle — from technical design to production.",
+    details: [
+      "Full-stack development of web applications, from database and API design to frontend implementation.",
+      "Design and development of distributed backends: GraphQL gateways and REST microservices over PostgreSQL.",
+      "Building modern, responsive frontends in Next.js and React with TypeScript.",
+      "Database modeling and maintenance: relational schema design, versioned SQL migrations, and query optimization.",
+      "Implementation of authentication, role-based access control, and real-time features (WebSockets).",
+      "End-to-end testing and quality assurance with Playwright and Vitest.",
+      "Independent ownership of features from technical design through to production release.",
+      "Design and development, from scratch, of a full CRM/ERP for a telephony company — a single platform that manages their entire operation: client management, sales and contracts, product inventory, employee time-tracking, and commercial objectives.",
+    ],
+    technologies: [
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Next.js",
+      "React.js",
+      "Redux",
+      "Tailwind",
+      "GraphQL",
+      "Apollo GraphQL",
+      "Node.js",
+      "WebSockets",
+      "PostgreSQL",
+      "SQL",
+      "Playwright",
+      "Vitest",
+      "CI/CD",
+      "Figma",
+      "AI",
+      "Git",
+      "Agile Methodologies",
+    ],
+    banner: "/babooni-banner.svg",
+    current: true,
+  },
+  {
     slug: "orekait",
     company: "Oreka IT",
     role: "Fullstack Developer | Technical Owner",
-    period: "May 2025 - Present",
+    period: "May 2025 - February 2026",
     description:
       "Technical definition and execution of web products, including architectural decisions, technology selection, end-to-end development, and production deployment.",
     details: [
@@ -55,7 +98,6 @@ export const jobs: Job[] = [
       "Agile Methodologies",
     ],
     banner: "/oreka-banner.png",
-    current: true,
   },
   {
     slug: "gestioma",

@@ -8,7 +8,8 @@
       "Bash(npm run lint)",
       "Bash(npx tsc:*)",
       "Bash(wc:*)",
-      "Bash(npx eslint:*)"
+      "Bash(npx eslint:*)",
+      "WebSearch"
     ]
   }
 }
