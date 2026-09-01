@@ -48,6 +48,12 @@ import {
   SiApollographql,
   SiVitest,
   SiLucide,
+  SiRadixui,
+  SiZod,
+  SiTauri,
+  SiRust,
+  SiVite,
+  SiMarkdown,
 } from "react-icons/si";
 import { RiNotification3Line } from "react-icons/ri";
 import { VscGear } from "react-icons/vsc";
@@ -92,6 +98,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "JavaScript", icon: SiJavascript },
       { name: "TypeScript", icon: SiTypescript },
       { name: "Python", icon: SiPython },
+      { name: "Rust", icon: SiRust },
       { name: "SQL", icon: FaDatabase },
       { name: "HTML", icon: SiHtml5 },
       { name: "CSS", icon: SiCss3 },
@@ -104,6 +111,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Next.js", icon: SiNextdotjs },
       { name: "React.js", icon: SiReact },
+      { name: "Tauri", icon: SiTauri },
     ],
   },
   {
@@ -114,6 +122,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "Tailwind", icon: SiTailwindcss },
       { name: "Mantine", icon: SiMantine },
       { name: "Shadcn", icon: SiShadcnui },
+      { name: "Radix UI", icon: SiRadixui },
       { name: "DaisyUI", icon: SiDaisyui },
       { name: "Chakra UI", icon: SiChakraui },
       { name: "Material-UI", icon: SiMui },
@@ -132,6 +141,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "Zustand" },
       { name: "TanStack Query", icon: SiReactquery },
       { name: "React Hook Form", icon: SiReacthookform },
+      { name: "Zod", icon: SiZod },
     ],
   },
   {
@@ -158,6 +168,7 @@ export const skillCategories: SkillCategory[] = [
     color: "bg-orange-200/70 text-orange-900",
     skills: [
       { name: "Git", icon: SiGit },
+      { name: "Vite", icon: SiVite },
       { name: "Docker", icon: SiDocker },
       { name: "Vercel", icon: SiVercel },
       { name: "Cloudinary", icon: SiCloudinary },
@@ -185,6 +196,8 @@ export const skillCategories: SkillCategory[] = [
       { name: "AI" },
       { name: "Lucide", icon: SiLucide },
       { name: "Sonner", icon: RiNotification3Line },
+      { name: "Marked", icon: SiMarkdown },
+      { name: "DOMPurify" },
       { name: "clsx" },
       { name: "Agile Methodologies" },
     ],
