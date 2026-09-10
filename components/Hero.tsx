@@ -137,7 +137,7 @@ export function Hero({ isReady = true, onModelLoad }: HeroProps) {
             animate={animationState}
           >
             <Paragraph>
-              I am a Fullstack Developer specialized in building{" "}
+              I am specialized in building{" "}
               <Highlight>modern, accessible, and maintainable</Highlight> web
               applications, with a strong focus on <Highlight>UI/UX</Highlight>,
               clean code, and best practices.

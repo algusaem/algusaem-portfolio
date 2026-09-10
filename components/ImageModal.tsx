@@ -50,7 +50,7 @@ export function ImageModal({
       <button
         onClick={onClose}
         className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
-        aria-label="Close modal"
+        aria-label="Close image viewer"
       >
         <X className="size-8" />
       </button>

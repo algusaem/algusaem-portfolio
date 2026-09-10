@@ -11,7 +11,7 @@ const navItems = [
   { label: "Work", href: "#work" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "Studies", href: "#studies" },
+  { label: "Education", href: "#studies" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -109,7 +109,10 @@ function MobileMenu({ activeSection }: { activeSection: string }) {
   // Render placeholder button during SSR to avoid hydration mismatch
   if (!mounted) {
     return (
-      <button className="flex h-10 w-10 items-center justify-center rounded-md hover:bg-primary hover:text-white md:hidden">
+      <button
+        aria-label="Open menu"
+        className="flex h-10 w-10 items-center justify-center rounded-md hover:bg-primary hover:text-white md:hidden"
+      >
         <Menu size={24} />
       </button>
     );
@@ -117,7 +120,10 @@ function MobileMenu({ activeSection }: { activeSection: string }) {
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger className="flex h-10 w-10 items-center justify-center rounded-md hover:bg-primary hover:text-white md:hidden">
+      <SheetTrigger
+        aria-label="Open menu"
+        className="flex h-10 w-10 items-center justify-center rounded-md hover:bg-primary hover:text-white md:hidden"
+      >
         <Menu size={24} />
       </SheetTrigger>
       <SheetContent

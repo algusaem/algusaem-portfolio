@@ -24,7 +24,8 @@ const khTekaMono = localFont({
 
 export const metadata: Metadata = {
   title: "Alex Gutierrez - Fullstack Developer",
-  description: "Portfolio website of Alex Gutierrez, Fullstack Developer",
+  description:
+    "Alex Gutierrez, fullstack developer based in the Basque Country, Spain. Work experience, projects and contact.",
 };
 
 export default function RootLayout({
