@@ -71,7 +71,7 @@ export const jobs: Job[] = [
       "Provided technical leadership and support for complex engineering challenges.",
       "Managed deployments, infrastructure, and CI/CD pipelines for the department.",
       "Estimated technical effort and planned development work.",
-      "Designed and developed from scratch a water meter reading application for Vitoria-Gasteiz City Council.",
+      "Designed and developed from scratch the water meter reading application for AMVISA, Vitoria-Gasteiz's public municipal water company.",
       "Completely redesigned and modernized an Industry 4.0 MES application.",
       "Rebuilt a multimedia project management platform from the ground up.",
     ],
