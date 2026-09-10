@@ -66,7 +66,7 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         <a
           href="#"
-          className="font-mono text-lg font-bold text-primary hover:text-accent transition-colors"
+          className="-mx-3 -my-2 px-3 py-2 font-mono text-lg font-bold text-primary hover:text-accent transition-colors"
         >
           AG
         </a>
@@ -78,7 +78,7 @@ export function Navbar() {
                 <NavigationMenu.Link
                   href={item.href}
                   className={clsx(
-                    "block px-3 py-2 text-sm font-medium transition-colors hover:text-primary",
+                    "block px-3 py-3 text-sm font-medium transition-colors hover:text-primary",
                     activeSection === item.href.replace("#", "")
                       ? "text-primary"
                       : "text-foreground/80",
@@ -111,7 +111,7 @@ function MobileMenu({ activeSection }: { activeSection: string }) {
     return (
       <button
         aria-label="Open menu"
-        className="flex h-10 w-10 items-center justify-center rounded-md hover:bg-primary hover:text-white md:hidden"
+        className="relative flex h-10 w-10 items-center justify-center rounded-md hover:bg-primary hover:text-white md:hidden after:absolute after:-inset-0.5"
       >
         <Menu size={24} />
       </button>
@@ -122,7 +122,7 @@ function MobileMenu({ activeSection }: { activeSection: string }) {
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger
         aria-label="Open menu"
-        className="flex h-10 w-10 items-center justify-center rounded-md hover:bg-primary hover:text-white md:hidden"
+        className="relative flex h-10 w-10 items-center justify-center rounded-md hover:bg-primary hover:text-white md:hidden after:absolute after:-inset-0.5"
       >
         <Menu size={24} />
       </SheetTrigger>

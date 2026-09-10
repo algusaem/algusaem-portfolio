@@ -111,7 +111,7 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
             type="button"
             onClick={prevImage}
             aria-label="Previous image"
-            className="absolute left-2 top-1/2 -translate-y-1/2 text-primary cursor-pointer opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 focus-visible:opacity-100 focus-visible:scale-100 [@media(hover:none)]:opacity-100 [@media(hover:none)]:scale-100 drop-shadow-md hover:scale-110! transition-all duration-300 ease-in-out z-20"
+            className="absolute left-2 top-1/2 -translate-y-1/2 text-primary cursor-pointer opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 focus-visible:opacity-100 focus-visible:scale-100 [@media(hover:none)]:opacity-100 [@media(hover:none)]:scale-100 drop-shadow-md hover:scale-110! transition-all duration-300 ease-in-out z-20 after:absolute after:-inset-2.5"
           >
             <ChevronLeft className="size-8" />
           </button>
@@ -119,24 +119,29 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
             type="button"
             onClick={nextImage}
             aria-label="Next image"
-            className="absolute right-2 top-1/2 -translate-y-1/2 text-primary cursor-pointer opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 focus-visible:opacity-100 focus-visible:scale-100 [@media(hover:none)]:opacity-100 [@media(hover:none)]:scale-100 drop-shadow-md hover:scale-110! transition-all duration-300 ease-in-out z-20"
+            className="absolute right-2 top-1/2 -translate-y-1/2 text-primary cursor-pointer opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 focus-visible:opacity-100 focus-visible:scale-100 [@media(hover:none)]:opacity-100 [@media(hover:none)]:scale-100 drop-shadow-md hover:scale-110! transition-all duration-300 ease-in-out z-20 after:absolute after:-inset-2.5"
           >
             <ChevronRight className="size-8" />
           </button>
 
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex z-20">
             {images.map((_, i) => (
               <button
                 key={i}
+                type="button"
                 onClick={() => goToImage(i)}
-                className={clsx(
-                  "size-2 rounded-full transition-colors",
-                  i === currentImage
-                    ? "bg-primary"
-                    : "bg-background/60 hover:bg-background/80",
-                )}
+                className="group/dot flex size-6 items-center justify-center"
                 aria-label={`Go to image ${i + 1}`}
-              />
+              >
+                <span
+                  className={clsx(
+                    "size-2 rounded-full transition-colors",
+                    i === currentImage
+                      ? "bg-primary"
+                      : "bg-background/60 group-hover/dot:bg-background/80",
+                  )}
+                />
+              </button>
             ))}
           </div>
         </>

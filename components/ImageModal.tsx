@@ -54,7 +54,7 @@ export function ImageModal({
         type="button"
         autoFocus
         onClick={onClose}
-        className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
+        className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors after:absolute after:-inset-1.5"
         aria-label="Close image viewer"
       >
         <X className="size-8" />
@@ -93,7 +93,7 @@ export function ImageModal({
               onPrev();
             }}
             aria-label="Previous image"
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white cursor-pointer transition-colors"
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white cursor-pointer transition-colors after:absolute after:-inset-0.5"
           >
             <ChevronLeft className="size-10" />
           </button>
@@ -104,27 +104,32 @@ export function ImageModal({
               onNext();
             }}
             aria-label="Next image"
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white cursor-pointer transition-colors"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white cursor-pointer transition-colors after:absolute after:-inset-0.5"
           >
             <ChevronRight className="size-10" />
           </button>
 
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+          <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex">
             {images.map((_, i) => (
               <button
                 key={i}
+                type="button"
                 onClick={(e) => {
                   e.stopPropagation();
                   onSelect(i);
                 }}
-                className={clsx(
-                  "size-2.5 rounded-full transition-colors",
-                  i === currentImage
-                    ? "bg-primary"
-                    : "bg-white/40 hover:bg-white/60",
-                )}
+                className="group/dot flex size-6 items-center justify-center"
                 aria-label={`Go to image ${i + 1}`}
-              />
+              >
+                <span
+                  className={clsx(
+                    "size-2.5 rounded-full transition-colors",
+                    i === currentImage
+                      ? "bg-primary"
+                      : "bg-white/40 group-hover/dot:bg-white/60",
+                  )}
+                />
+              </button>
             ))}
           </div>
         </>
