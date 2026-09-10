@@ -75,6 +75,7 @@ export function ImageModal({
                 src={src}
                 alt={`${alt} ${index + 1}`}
                 fill
+                sizes="90vw"
                 className="object-contain"
                 priority={index === 0}
               />

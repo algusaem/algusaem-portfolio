@@ -18,7 +18,14 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
   const [currentImage, setCurrentImage] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const touchStartX = useRef(0);
+  const slideRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const hasMultipleImages = images.length > 1;
+
+  // Return keyboard focus to the image that is showing when the viewer closes
+  const closeModal = () => {
+    setIsModalOpen(false);
+    slideRefs.current[currentImage]?.focus({ preventScroll: true });
+  };
 
   const prevImage = () => {
     setCurrentImage(currentImage === 0 ? images.length - 1 : currentImage - 1);
@@ -77,6 +84,9 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
         {images.map((src, index) => (
           <button
             key={index}
+            ref={(element) => {
+              slideRefs.current[index] = element;
+            }}
             type="button"
             onClick={() => setIsModalOpen(true)}
             tabIndex={index === currentImage ? 0 : -1}
@@ -87,6 +97,7 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
               src={src}
               alt={`${alt} ${index + 1}`}
               fill
+              sizes="(min-width: 1280px) 680px, (min-width: 1024px) 55vw, 100vw"
               className="object-cover"
               priority={index === 0}
             />
@@ -138,7 +149,7 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
             images={images}
             currentImage={currentImage}
             alt={alt}
-            onClose={() => setIsModalOpen(false)}
+            onClose={closeModal}
             onPrev={prevImage}
             onNext={nextImage}
             onSelect={goToImage}
