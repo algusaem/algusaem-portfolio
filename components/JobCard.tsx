@@ -167,7 +167,7 @@ function JobCardTechnologies({ technologies, hasEntered }: JobCardTechnologiesPr
       transition={{ ...springTransition, delay: 0.2 }}
     >
       <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-        Technologies used
+        Stack
       </p>
       <motion.div
         className="flex flex-wrap gap-2"
