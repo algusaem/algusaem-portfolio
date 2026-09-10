@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "components/ProjectCard.tsx"
+        ],
+        "createdAt": "2026-09-10T19:59:05.992Z",
+        "reason": "assistant triage: L81-93 are 24x24 decorative corner-bracket hover spans with two borders each, not a card side accent"
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "components/ProjectCard.tsx"
+        ],
+        "createdAt": "2026-09-10T19:59:06.140Z",
+        "reason": "assistant triage: L81-93 corner brackets use a rounded corner as part of the bracket shape, not an accent border on a rounded card"
+      }
+    ]
+  }
+}

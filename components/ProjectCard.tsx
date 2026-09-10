@@ -135,7 +135,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
         <motion.div className="mt-4" variants={fadeUpItem}>
           <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-            Technologies
+            Stack
           </p>
           <motion.div
             className="flex flex-wrap gap-2"
