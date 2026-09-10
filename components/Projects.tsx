@@ -25,7 +25,7 @@ export function Projects() {
         viewport={{ once: true, amount: 0.5 }}
         transition={{ ...springTransition, delay: 0.1 }}
       >
-        Things I&apos;ve built
+        Built on my own time
       </motion.p>
 
       <div className="mt-8 flex flex-col gap-16 lg:gap-20">

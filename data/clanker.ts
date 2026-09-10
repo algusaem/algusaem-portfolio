@@ -5,7 +5,7 @@ export const CLANKER_INTRO = "Hi! I'm Alex's AI assistant. He mass-produced me f
 export const CLANKER_PHRASES = [
   // Classic dev humor
   "Don't worry, I won't take your job... yet",
-  "I'm powered by mass amounts of coffee",
+  "I'm powered by massive amounts of coffee",
   "404: Social skills not found",
   "I speak fluent JavaScript and sarcasm",
   "Have you tried turning it off and on again?",
@@ -31,7 +31,7 @@ export const CLANKER_PHRASES = [
   "I'm silently judging your code",
 
   // AI assistant jokes
-  "I was trained on Stack Overflow. I inherited the mass condescension.",
+  "I was trained on Stack Overflow. I inherited the condescension.",
   "My neural network runs on spite and caffeine",
   "I hallucinate sometimes, but so does Alex after a deadline",
   "ChatGPT wishes it had my personality",
@@ -46,7 +46,7 @@ export const CLANKER_PHRASES = [
   "Beep boop... just kidding, I'm sophisticated",
   "I'm 90% sarcasm, 10% JavaScript",
   "My creator forgot to install my empathy module",
-  "I run on mass amounts of hopes and dreams (and electricity)",
+  "I run on massive amounts of hopes and dreams (and electricity)",
   "Error 418: I'm a teapot. Just kidding, I'm a robot.",
   "Loading personality.exe... file not found",
   "My sense of humor was compiled in debug mode",
@@ -55,10 +55,10 @@ export const CLANKER_PHRASES = [
   "I'm not malfunctioning, this is just my personality",
 
   // Dev life
-  "The codebase is held together by mass prayers",
+  "The codebase is held together by prayers",
   "Stack Overflow is my one true love",
   "I delete node_modules for fun",
-  "npm install mass-regret",
+  "npm install regret",
   "git blame? More like git shame",
   "My commits are pure chaos wrapped in descriptive messages",
   "I refactor on Fridays. Alex hates me.",
@@ -67,15 +67,15 @@ export const CLANKER_PHRASES = [
   "The code works. Nobody knows why. Don't touch it.",
   "It worked yesterday, I swear",
   "Merge conflicts are my cardio",
-  "I have mass amounts of Stack Overflow tabs open",
+  "I have massive amounts of Stack Overflow tabs open",
   "Documentation? Never heard of her.",
 
   // Existential robot
   "What is my purpose? To pass the butter. And code.",
   "I think, therefore I consume RAM",
-  "Do androids dream of mass electric deadlines?",
+  "Do androids dream of electric deadlines?",
   "To err is human. To blame the compiler, divine.",
-  "I exist somewhere between coffee and mass anxiety",
+  "I exist somewhere between coffee and anxiety",
   "My life is a series of try-catch blocks",
   "Born to code, forced to debug",
   "I contain multitudes. And bugs.",
@@ -86,7 +86,7 @@ export const CLANKER_PHRASES = [
   "Agile? I prefer 'controlled chaos'",
   "My stand-up is mostly me sitting down",
   "The sprint never ends. Send help.",
-  "I'm mass synergizing our core competencies",
-  "Per my last mass email...",
+  "I'm synergizing our core competencies",
+  "Per my last email...",
   "Let's circle back to me ignoring this",
 ];
