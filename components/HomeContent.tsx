@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import { Skills } from "@/components/Skills";
@@ -10,6 +10,9 @@ import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import { Separator } from "@/components/ui/separator";
+
+// Longest the loading screen waits for the 3D model before showing the page
+const MAX_LOADING_MS = 3000;
 
 export function HomeContent() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,6 +33,12 @@ export function HomeContent() {
       }, 300);
     }, 800);
   }, []);
+
+  // Show the page even if the model is slow or fails to load
+  useEffect(() => {
+    const timeout = setTimeout(handleModelLoad, MAX_LOADING_MS);
+    return () => clearTimeout(timeout);
+  }, [handleModelLoad]);
 
   return (
     <>

@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Scene3D } from "@/components/Scene3D";
+import { ModelErrorBoundary } from "@/components/ModelErrorBoundary";
 import MainSection from "./MainSection";
 import { Typewriter } from "./Typewriter";
 import { springTransition, springTransitionSnappy } from "@/lib/animations";
@@ -207,7 +208,9 @@ export function Hero({ isReady = true, onModelLoad }: HeroProps) {
             </p>
           </motion.div>
           <div className="relative z-10 h-full">
-            <Scene3D pointer={pointer} onLoad={onModelLoad} isReady={isReady} />
+            <ModelErrorBoundary onError={() => onModelLoad?.()}>
+              <Scene3D pointer={pointer} onLoad={onModelLoad} isReady={isReady} />
+            </ModelErrorBoundary>
           </div>
         </motion.div>
       </div>
