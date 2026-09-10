@@ -75,31 +75,43 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
         transition={{ duration: 0.3, ease: "easeOut" }}
       >
         {images.map((src, index) => (
-          <div key={index} className="relative min-w-full h-full shrink-0">
+          <button
+            key={index}
+            type="button"
+            onClick={() => setIsModalOpen(true)}
+            tabIndex={index === currentImage ? 0 : -1}
+            aria-label={`Enlarge ${alt} ${index + 1}`}
+            className="relative min-w-full h-full shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-primary"
+          >
             <Image
               src={src}
               alt={`${alt} ${index + 1}`}
               fill
-              className="object-cover cursor-pointer"
-              onClick={() => setIsModalOpen(true)}
+              className="object-cover"
               priority={index === 0}
             />
-          </div>
+          </button>
         ))}
       </motion.div>
 
       {hasMultipleImages && (
         <>
-          <ChevronLeft
+          <button
+            type="button"
             onClick={prevImage}
-            className="absolute left-2 top-1/2 -translate-y-1/2 size-8 text-primary cursor-pointer opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 drop-shadow-md hover:scale-110! transition-all duration-300 ease-in-out z-20"
             aria-label="Previous image"
-          />
-          <ChevronRight
+            className="absolute left-2 top-1/2 -translate-y-1/2 text-primary cursor-pointer opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 focus-visible:opacity-100 focus-visible:scale-100 [@media(hover:none)]:opacity-100 [@media(hover:none)]:scale-100 drop-shadow-md hover:scale-110! transition-all duration-300 ease-in-out z-20"
+          >
+            <ChevronLeft className="size-8" />
+          </button>
+          <button
+            type="button"
             onClick={nextImage}
-            className="absolute right-2 top-1/2 -translate-y-1/2 size-8 text-primary cursor-pointer opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 drop-shadow-md hover:scale-110! transition-all duration-300 ease-in-out z-20"
             aria-label="Next image"
-          />
+            className="absolute right-2 top-1/2 -translate-y-1/2 text-primary cursor-pointer opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 focus-visible:opacity-100 focus-visible:scale-100 [@media(hover:none)]:opacity-100 [@media(hover:none)]:scale-100 drop-shadow-md hover:scale-110! transition-all duration-300 ease-in-out z-20"
+          >
+            <ChevronRight className="size-8" />
+          </button>
 
           <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
             {images.map((_, i) => (

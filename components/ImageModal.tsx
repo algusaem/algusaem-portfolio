@@ -40,6 +40,9 @@ export function ImageModal({
 
   return (
     <motion.div
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${alt} viewer`}
       className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
       onClick={onClose}
       initial={{ opacity: 0 }}
@@ -48,6 +51,8 @@ export function ImageModal({
       transition={{ duration: 0.3 }}
     >
       <button
+        type="button"
+        autoFocus
         onClick={onClose}
         className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
         aria-label="Close image viewer"
@@ -80,22 +85,28 @@ export function ImageModal({
 
       {hasMultipleImages && (
         <>
-          <ChevronLeft
+          <button
+            type="button"
             onClick={(e) => {
               e.stopPropagation();
               onPrev();
             }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 size-10 text-white/80 hover:text-white cursor-pointer transition-colors"
             aria-label="Previous image"
-          />
-          <ChevronRight
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white cursor-pointer transition-colors"
+          >
+            <ChevronLeft className="size-10" />
+          </button>
+          <button
+            type="button"
             onClick={(e) => {
               e.stopPropagation();
               onNext();
             }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 size-10 text-white/80 hover:text-white cursor-pointer transition-colors"
             aria-label="Next image"
-          />
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white cursor-pointer transition-colors"
+          >
+            <ChevronRight className="size-10" />
+          </button>
 
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
             {images.map((_, i) => (
