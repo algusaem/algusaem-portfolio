@@ -53,7 +53,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
     margin: "-20% 0px -20% 0px",
   });
 
-  const opacity = hasEntered ? (isInView ? 1 : 0.25) : 0;
+  const opacity = hasEntered ? (isInView ? 1 : 0.6) : 0;
 
   return (
     <motion.article

@@ -4,6 +4,7 @@ import { Suspense, useEffect, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { Group, MeshStandardMaterial, Mesh, MathUtils } from "three";
+import { useReducedMotion } from "framer-motion";
 
 interface Pointer {
   x: number;
@@ -14,9 +15,10 @@ interface ModelProps {
   pointer: Pointer;
   onLoad?: () => void;
   isReady?: boolean;
+  reduceMotion: boolean;
 }
 
-function Model({ pointer, onLoad, isReady = false }: ModelProps) {
+function Model({ pointer, onLoad, isReady = false, reduceMotion }: ModelProps) {
   const group = useRef<Group>(null);
   const introProgress = useRef(0);
   const introStarted = useRef(false);
@@ -61,6 +63,14 @@ function Model({ pointer, onLoad, isReady = false }: ModelProps) {
 
     // Intro animation: spin in from tiny scale
     if (!introComplete.current) {
+      // Reduce motion: appear in place without the spin
+      if (reduceMotion) {
+        group.current.scale.setScalar(1);
+        group.current.rotation.y = 0;
+        introComplete.current = true;
+        return;
+      }
+
       introProgress.current = Math.min(1, introProgress.current + delta * 0.7);
       const t = introProgress.current;
 
@@ -110,6 +120,8 @@ interface Scene3DProps {
 }
 
 export function Scene3D({ pointer, onLoad, isReady }: Scene3DProps) {
+  const reduceMotion = useReducedMotion() ?? false;
+
   return (
     <Canvas camera={{ position: [3, 1, 10], fov: 50 }} flat>
       <ambientLight intensity={3} />
@@ -117,7 +129,12 @@ export function Scene3D({ pointer, onLoad, isReady }: Scene3DProps) {
       <directionalLight position={[-5, 3, -5]} intensity={2} />
       <directionalLight position={[0, 5, 0]} intensity={1} />
       <Suspense fallback={<Fallback />}>
-        <Model pointer={pointer} onLoad={onLoad} isReady={isReady} />
+        <Model
+          pointer={pointer}
+          onLoad={onLoad}
+          isReady={isReady}
+          reduceMotion={reduceMotion}
+        />
       </Suspense>
     </Canvas>
   );

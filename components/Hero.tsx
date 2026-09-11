@@ -199,7 +199,7 @@ export function Hero({ isReady = true, onModelLoad }: HeroProps) {
             initial="hidden"
             animate={animationState}
           >
-            <p className="text-xs font-mono text-foreground/60 italic text-center">
+            <p className="text-xs font-mono text-foreground/70 italic text-center">
               <Typewriter
                 phrases={CLANKER_PHRASES}
                 firstPhrase={CLANKER_INTRO}

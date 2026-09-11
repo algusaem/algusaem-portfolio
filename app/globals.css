@@ -60,14 +60,14 @@
   --popover-foreground: oklch(0.20 0.02 320);
 
   /* Brand */
-  --primary: oklch(0.63 0.24 25); /* Red #ff4b44 */
+  --primary: oklch(0.52 0.2 27); /* Red #c2181d, passes WCAG AA as text and behind white text */
   --primary-foreground: oklch(0.98 0 0);
 
   --secondary: oklch(0.85 0.025 320); /* Muted lavender */
   --secondary-foreground: oklch(0.25 0.02 320);
 
   /* Accents */
-  --accent: oklch(0.58 0.25 290); /* Purple #9b5cff */
+  --accent: #6f3de0; /* Purple, passes WCAG AA as text on cards. Hex on purpose: the build lightens the equivalent oklch value */
   --accent-foreground: oklch(0.98 0 0);
 
   --muted: oklch(0.87 0.02 320);
@@ -110,6 +110,13 @@ html {
   overflow-x: hidden;
   overflow-y: auto;
   cursor: url("/cursor-default.png") 0 0, auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 a,

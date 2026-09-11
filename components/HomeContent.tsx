@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef, useEffect } from "react";
+import { MotionConfig } from "framer-motion";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import { Skills } from "@/components/Skills";
@@ -41,7 +42,8 @@ export function HomeContent() {
   }, [handleModelLoad]);
 
   return (
-    <>
+    // Visitors with reduce motion on get fades instead of slides and scales
+    <MotionConfig reducedMotion="user">
       <LoadingScreen isLoading={isLoading} />
       <div className="min-h-screen bg-background">
         <Navbar />
@@ -59,6 +61,6 @@ export function HomeContent() {
           <Contact />
         </main>
       </div>
-    </>
+    </MotionConfig>
   );
 }

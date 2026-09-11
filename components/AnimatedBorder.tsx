@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { borderPathVariants } from "@/lib/animations";
 
 interface AnimatedBorderProps {
@@ -8,6 +8,9 @@ interface AnimatedBorderProps {
 }
 
 export function AnimatedBorder({ isActive }: AnimatedBorderProps) {
+  const shouldReduceMotion = useReducedMotion();
+  const activeVariant = shouldReduceMotion ? "still" : "active";
+
   return (
     <svg
       className="absolute inset-0 w-full h-full pointer-events-none z-10"
@@ -23,7 +26,7 @@ export function AnimatedBorder({ isActive }: AnimatedBorderProps) {
         strokeWidth="2"
         variants={borderPathVariants}
         initial="idle"
-        animate={isActive ? "active" : "idle"}
+        animate={isActive ? activeVariant : "idle"}
       />
     </svg>
   );

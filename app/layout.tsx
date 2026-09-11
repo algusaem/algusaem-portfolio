@@ -42,7 +42,7 @@ export default function RootLayout({
         <footer className="px-4 py-8 text-center text-sm text-muted-foreground">
           <span className="inline-flex items-center gap-1.5">
             <span className="relative inline-flex size-2">
-              <span className="absolute inline-flex size-full animate-ping rounded-full bg-green-400 opacity-75" />
+              <span className="absolute inline-flex size-full motion-safe:animate-ping rounded-full bg-green-400 opacity-75" />
               <span className="relative inline-flex size-2 rounded-full bg-green-500" />
             </span>
             Based in the{" "}

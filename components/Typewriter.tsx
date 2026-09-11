@@ -81,7 +81,7 @@ export function Typewriter({ phrases, firstPhrase, firstPhraseDelay = 4000 }: Ty
   return (
     <span>
       &quot;{text}&quot;
-      <span className="inline-block w-0.5 h-4.5 bg-foreground/60 ml-0.5 align-text-bottom animate-[blink_1s_step-end_infinite]" />
+      <span className="inline-block w-0.5 h-4.5 bg-foreground/60 ml-0.5 align-text-bottom motion-safe:animate-[blink_1s_step-end_infinite]" />
     </span>
   );
 }

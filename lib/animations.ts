@@ -70,6 +70,12 @@ export const borderPathVariants: Variants = {
       },
     },
   },
+  // Full outline without the loop, for visitors with reduce motion on
+  still: {
+    pathLength: 1,
+    opacity: 1,
+    transition: { duration: 0 },
+  },
 };
 
 // Expand/collapse for accordion content
