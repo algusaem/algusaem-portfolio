@@ -38,7 +38,7 @@ Frontend-leaning engineer with full-stack depth: strong on UI, and also carries 
 
 - Voice: plain and specific. Concrete facts over buzzwords, in the register of the existing BuyCarMap and Simplest Markdown descriptions. Humour lives in the robot, not in the main copy.
 - The "clanker" 3D robot and its dev-humour lines stay.
-- Red #ff4b44 and the KH Teka typeface are part of the identity.
+- Red #c2181d and the KH Teka typeface are part of the identity. The red was darkened from #ff4b44 on 2026-09-11 to pass WCAG AA contrast.
 
 ## Evidence on Hand
 
